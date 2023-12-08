@@ -33,13 +33,14 @@
     </header>
 
     <main class="main-container main-program">
+
       <section class="section-program">
         <h1 class="section-program__title title title--lg">Подбор программы</h1>
         <p class="section-program__description">Заполните анкету, и мы подберем программу питания для вашего кота</p>
         <form class="section-program__form form" action="http://echo.htmlacademy.ru">
-          <fieldset class="form__fieldset">
+          <fieldset class="form__fieldset form__fieldset--data">
             <legend class="visually-hidden">Данные питомца</legend>
-            <div class="form__column form__column--data">
+            <div class="form__column">
               <label class="form__label">
                 <span class="form__span">Имя:</span>
                 <input class="form__input input input--text" type="text" name="name" placeholder="Барсик" required>
@@ -53,7 +54,9 @@
                 <input class="form__input input input--text" type="number" name="age" placeholder="7">
               </label>
             </div>
-            <div class="form__column form__column--type">
+          </fieldset>
+          <fieldset class="form__fieldset form__fieldset--type">
+            <div class="form__column">
               <label class="form__label form__label--reverse">
                 <span class="form__span">Похудение</span>
                 <input class="form__input input input--radio" type="radio" name="program-type" value="diet" checked>
@@ -68,7 +71,7 @@
               </label>
             </div>
           </fieldset>
-          <fieldset class="form__fieldset">
+          <fieldset class="form__fieldset form__fieldset--contacts">
             <legend class="form__title title title--md">Контактные данные (владельца кота)</legend>
             <div class="form__column form__column--email">
               <label class="form__label">
@@ -83,15 +86,15 @@
               </label>
             </div>
           </fieldset>
-          <fieldset class="form__fieldset">
+          <fieldset class="form__fieldset form__fieldset--comment">
             <legend class="form__title title title--md">Комментарий</legend>
-            <div class="form__column form__column--comment">
+            <div class="form__column">
               <textarea class="form__textarea input input--about" name="about" cols="30" rows="10" placeholder="Расскажите обо всех повадках кота"></textarea>
             </div>
           </fieldset>
-          <fieldset class="form__fieldset">
+          <fieldset class="form__fieldset form__fieldset--options">
             <legend class="form__title title title--md">Дополнительно</legend>
-            <div class="form__column form__column--option">
+            <div class="form__column">
               <label class="form__label form__label--reverse">
                 <span class="form__span">Cахарозаменитель</span>
                 <input class="form__input input input--checkbox" type="checkbox" name="checkbox" value="sweetener">
@@ -116,9 +119,11 @@
           </div>
         </form>
       </section>
+
     </main>
 
     <footer class="main-footer">
+
       <section class="main-footer__contacts">
         <h2 class="visually-hidden">Наши контакты</h2>
         <div class="main-footer__text contacts-info">
@@ -129,6 +134,7 @@
           <img src="images/map-preview.png" width="320" height="400" alt="Карта с адресом магазина">
         </div>
       </section>
+
       <div class="main-footer__links">
         <a class="main-footer__logo logo" href="#">
           <img src="images/icons/logo-text.svg" width="60" height="50" alt="Функиональное питание для котов 'Кэт энерджи'">
@@ -155,6 +161,7 @@
           <img class="logo-academy__img" src="images/icons/logo-academy-icon.svg" width="27" height="34" alt="HTML Academy">
         </a>
       </div>
+
     </footer>
 
   </body>
