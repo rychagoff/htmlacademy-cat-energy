@@ -11,8 +11,12 @@
 
     <header class="main-header">
       <a class="main-header__logo" href="index.html">
-        <img class="main-header__image" src="images/icons/logo-icon.svg" width="60" height="50" alt="">
-        <img class="main-header__text logo" src="images/icons/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="images/logos/logo-desktop.svg" width="70" height="59" alt="">
+          <source media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50" alt="">
+          <img class="main-header__image" src="images/logos/logo-mobile.svg" width="33" height="38" alt="">
+        </picture>
+        <img class="main-header__text logo" src="images/logos/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
       </a>
       <nav class="main-nav">
         <button class="main-nav__toggle" type="button">
