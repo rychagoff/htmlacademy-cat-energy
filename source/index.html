@@ -41,7 +41,11 @@
       <section class="hero">
         <h1 class="hero__title title title--lg">Функциональное питание для котов</h1>
         <p class="hero__description">Занялся собой? Займись котом!</p>
-        <img class="hero__image" src="images/hero-product-sm.png" width="280" height="270" alt="Фото продукта 'Кэт энерджи'">
+        <picture>
+          <source type="image/png" media="(min-width: 1200px)" srcset="images/hero-product-desktop@1x.png 1x, images/hero-product-desktop@2x.png 2x" width="552" height="500">
+          <source type="image/png" media="(min-width: 768px)" srcset="images/hero-product-tablet@1x.png 1x, images/hero-product-tablet@2x.png 2x" width="710" height="610">
+          <img class="hero__image" src="images/hero-product-mobile@1x.png" srcset="images/hero-product-mobile@2x.png 2x" width="280" height="270" alt="Фото продукта 'Кэт энерджи'">
+        </picture>
         <a class="hero__button button button--primary" href="#">Подобрать программу</a>
       </section>
 
@@ -102,8 +106,14 @@
         </dl>
         <p class="example__summary">Затраты на питание: <span>15 000 руб.</span></p>
         <div class="example__images">
-          <img src="images/cat-before.png" width="280" height="256" alt="Изображение толстого кота 'До'">
-          <img src="images/cat-after.png" width="280" height="256" alt="Изображение худого кота 'После'">
+          <picture>
+            <source type="image/png" media="(min-width: 768)" srcset="images/cat-before-tablet@1x.png 1x, images/cat-before-tablet@2x.png 2x" width="560" height="512">
+            <img src="images/cat-before-mobile@1x.png" srcset="images/cat-before-mobile@2x.png 2x" width="280" height="256" alt="Изображение толстого кота 'До'">
+          </picture>
+          <picture>
+            <source type="image/png" media="(min-width: 768)" srcset="images/cat-after-tablet@1x.png 1x, images/cat-after-tablet@2x.png 2x" width="560" height="512">
+            <img src="images/cat-after-mobile@1x.png" srcset="images/cat-after-mobile@2x.png 2x" width="280" height="256" alt="Изображение худого кота 'После'">
+          </picture>
         </div>
       </section>
 
@@ -124,28 +134,27 @@
 
       <div class="main-footer__links">
         <a class="main-footer__logo logo" href="#">
-          <img src="images/icons/logo-text.svg" width="60" height="50" alt="Функиональное питание для котов 'Кэт энерджи'">
+          <img src="images/logos/logo-text.svg" width="60" height="50" alt="Функиональное питание для котов 'Кэт энерджи'">
         </a>
         <ul class="main-footer__social social-list list">
           <li class="social-list__item social-list__item--vk">
             <a class="social-list__link" href="#">
-              <img class="social-list__icon" src="images/icons/vk.svg" width="28" height="22" alt="Вконтакте">
+              <img class="social-list__icon" src="images/social/vk.svg" width="28" height="22" alt="Вконтакте">
             </a>
           </li>
           <li class="social-list__item social-list__item--youtube">
             <a class="social-list__link" href="#">
-              <img class="social-list__icon" src="images/icons/youtube.svg" width="28" height="22" alt="Youtube">
+              <img class="social-list__icon" src="images/social/youtube.svg" width="28" height="22" alt="Youtube">
             </a>
           </li>
           <li class="social-list__item social-list__item--telegram">
             <a class="social-list__link" href="#">
-              <img class="social-list__icon" src="images/icons/telegram.svg" width="28" height="22" alt="Телеграм">
+              <img class="social-list__icon" src="images/social/telegram.svg" width="28" height="22" alt="Телеграм">
             </a>
-          </li>
-        </ul>
+          </li>       </ul>
         <a class="main-footer__logo-academy logo-academy" href="/">
           <span class="logo-academy__text">HTML Academy</span>
-          <img class="logo-academy__img" src="images/icons/logo-academy-icon.svg" width="27" height="34" alt="HTML Academy">
+          <img class="logo-academy__img" src="images/logos/logo-academy-icon.svg" width="27" height="34" alt="HTML Academy">
         </a>
       </div>
 
