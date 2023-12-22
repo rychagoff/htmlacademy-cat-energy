@@ -2,17 +2,26 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Название проекта</title>
+    <title>Функциональное питание для котов</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/index.js" defer></script>
   </head>
   <body class="page__body">
 
     <header class="main-header">
-      <a class="main-header__logo" href="#">
-        <img class="main-header__image" src="images/icons/logo-icon.svg" width="60" height="50" alt="">
-        <img class="main-header__text logo" src="images/icons/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
+      <a class="main-header__logo" href="index.html">
+        <picture>
+          <source type="image/svg+xml" media="(min-width: 1200px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
+          <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
+          <img class="main-header__image" src="images/logos/logo-mobile.svg" width="33" height="38" alt="">
+        </picture>
+        <img class="main-header__text logo" src="images/logos/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
       </a>
       <nav class="main-nav">
         <button class="main-nav__toggle" type="button">
@@ -41,7 +50,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/chicken-500-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/chicken-pro-500-desktop@1x.png 1x, images/catalog/chicken-pro-500-desktop@2x.png 2x" width="161" height="172">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/chicken-pro-500-tablet@1x.png 1x, images/catalog/chicken-pro-500-tablet@2x.png 2x" width="161" height="172">
+                  <img class="catalog-card__image" src="images/catalog/chicken-pro-500-mobile@1x.png" srcset="images/catalog/chicken-pro-500-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -70,7 +83,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/chicken-1000-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/chicken-pro-1000-desktop@1x.png 1x, images/catalog/chicken-pro-1000-desktop@2x.png 2x" width="172" height="196">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/chicken-pro-1000-tablet@1x.png 1x, images/catalog/chicken-pro-1000-tablet@2x.png 2x" width="168" height="206">
+                  <img class="catalog-card__image" src="images/catalog/chicken-pro-1000-mobile@1x.png" srcset="images/catalog/chicken-pro-1000-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -99,7 +116,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/fish-500-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/fish-pro-500-desktop@1x.png 1x, images/catalog/fish-pro-500-desktop@2x.png 2x" width="163" height="174">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/fish-pro-500-tablet@1x.png 1x, images/catalog/fish-pro-500-tablet@2x.png 2x" width="163" height="174">
+                  <img class="catalog-card__image" src="images/catalog/fish-pro-500-mobile@1x.png" srcset="images/catalog/fish-pro-500-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -128,7 +149,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/fish-1000-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/fish-pro-1000-desktop@1x.png 1x, images/catalog/fish-pro-1000-desktop@2x.png 2x" width="172" height="196">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/fish-pro-1000-tablet@1x.png 1x, images/catalog/fish-pro-1000-tablet@2x.png 2x" width="168" height="200">
+                  <img class="catalog-card__image" src="images/catalog/fish-pro-1000-mobile@1x.png" srcset="images/catalog/fish-pro-1000-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -157,7 +182,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/buckwheat-500-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/buckwheat-slim-500-desktop@1x.png 1x, images/catalog/buckwheat-slim-500-desktop@2x.png 2x" width="161" height="171">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/buckwheat-slim-500-tablet@1x.png 1x, images/catalog/buckwheat-slim-500-tablet@2x.png 2x" width="161" height="171">
+                  <img class="catalog-card__image" src="images/catalog/buckwheat-slim-500-mobile@1x.png" srcset="images/catalog/buckwheat-slim-500-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -186,7 +215,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/buckwheat-1000-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/buckwheat-slim-1000-desktop@1x.png 1x, images/catalog/buckwheat-slim-1000-desktop@2x.png 2x" width="172" height="196">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/buckwheat-slim-1000-tablet@1x.png 1x, images/catalog/buckwheat-slim-1000-tablet@2x.png 2x" width="168" height="200">
+                  <img class="catalog-card__image" src="images/catalog/buckwheat-slim-1000-mobile@1x.png" srcset="images/catalog/buckwheat-slim-1000-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -215,7 +248,11 @@
           <li class="catalog-list__item">
             <article class="catalog-card">
               <a class="catalog-card__link" href="#">
-                <img class="catalog-card__image" src="images/catalog/rice-500-sm.jpg" width="84" height="100" alt="Изображение продукта">
+                <picture>
+                  <source type="image/png" media="(min-width: 1200px)" srcset="images/catalog/rice-slim-500-desktop@1x.png 1x, images/catalog/rice-slim-500-desktop@2x.png 2x" width="163" height="174">
+                  <source type="image/png" media="(min-width: 768px)" srcset="images/catalog/rice-slim-500-tablet@1x.png 1x, images/catalog/rice-slim-500-tablet@2x.png 2x" width="163" height="174">
+                  <img class="catalog-card__image" src="images/catalog/rice-slim-500-mobile@1x.png" srcset="images/catalog/rice-slim-500-mobile@2x.png 2x" width="84" height="100" alt="Изображение продукта">
+                </picture>
               </a>
               <div class="catalog-card__info">
                 <a class="catalog-card__link" href="#">
@@ -336,28 +373,28 @@
 
       <div class="main-footer__links">
         <a class="main-footer__logo logo" href="#">
-          <img src="images/icons/logo-text.svg" width="60" height="50" alt="Функиональное питание для котов 'Кэт энерджи'">
+          <img src="images/logos/logo-text.svg" width="128" height="24" alt="Функиональное питание для котов 'Кэт энерджи'">
         </a>
         <ul class="main-footer__social social-list list">
           <li class="social-list__item social-list__item--vk">
             <a class="social-list__link" href="#">
-              <img class="social-list__icon" src="images/icons/vk.svg" width="28" height="22" alt="Вконтакте">
+              <img class="social-list__icon" src="images/social/vk.svg" width="28" height="22" alt="Вконтакте">
             </a>
           </li>
           <li class="social-list__item social-list__item--youtube">
             <a class="social-list__link" href="#">
-              <img class="social-list__icon" src="images/icons/youtube.svg" width="28" height="22" alt="Youtube">
+              <img class="social-list__icon" src="images/social/youtube.svg" width="28" height="22" alt="Youtube">
             </a>
           </li>
           <li class="social-list__item social-list__item--telegram">
             <a class="social-list__link" href="#">
-              <img class="social-list__icon" src="images/icons/telegram.svg" width="28" height="22" alt="Телеграм">
+              <img class="social-list__icon" src="images/social/telegram.svg" width="28" height="22" alt="Телеграм">
             </a>
           </li>
         </ul>
         <a class="main-footer__logo-academy logo-academy" href="/">
           <span class="logo-academy__text">HTML Academy</span>
-          <img class="logo-academy__img" src="images/icons/logo-academy-icon.svg" width="27" height="34" alt="HTML Academy">
+          <img class="logo-academy__img" src="images/logos/logo-academy-icon.svg" width="27" height="34" alt="HTML Academy">
         </a>
       </div>
 
