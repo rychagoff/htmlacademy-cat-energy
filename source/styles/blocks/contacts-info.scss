@@ -1,0 +1,16 @@
+.contacts-info {
+  background-color: $grey-bg;
+}
+
+.contacts-info__welcome {
+  font-family: $header-font;
+  font-size: 16px;
+  line-height: 20px;
+  color: $darken-text;
+}
+
+.contacts-info__address {
+  font-style: normal;
+  line-height: 20px;
+  color: $grey-text;
+}
