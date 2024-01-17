@@ -1,0 +1,21 @@
+.button {
+  font-family: $header-font;
+  font-size: 16px;
+  line-height: 20px;
+  color: $white-text;
+  border: 0;
+
+  &--primary {
+    background-color: $primary-color;
+  }
+
+  &--secondary {
+    background-color: $grey-bg;
+    color: $grey-text;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}

@@ -1,0 +1,24 @@
+.hero {
+  background-color: rgba($primary-color, 85%);
+}
+
+.hero__title {
+  color: $white-text;
+
+  @media screen and (min-width: 768px) {
+    color: $black-text;
+  }
+}
+
+.hero__description {
+  font-family: $header-font;
+  font-size: 14px;
+  line-height: 14px;
+  color: $white-text;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 20px;
+    color: $black-text;
+  }
+}

@@ -1,0 +1,34 @@
+.title {
+  font-family: $header-font;
+  font-weight: 400;
+  color: $black-text;
+
+  &--lg {
+    font-size: 36px;
+    line-height: 36px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+
+  &--md {
+    font-size: 24px;
+    line-height: 36px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  &--sm {
+    font-size: 16px;
+    line-height: 20px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}

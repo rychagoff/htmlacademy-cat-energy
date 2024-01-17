@@ -1,0 +1,13 @@
+.additional-card__title {
+  line-height: 16px;
+  color: $darken-text;
+
+  @media screen and (min-width: 768px) {
+    line-height: 20px;
+  }
+}
+
+.additional-card__parameters {
+  font-size: 14px;
+  line-height: 14px;
+}
