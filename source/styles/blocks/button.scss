@@ -13,4 +13,9 @@
     background-color: $grey-bg;
     color: $grey-text;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
