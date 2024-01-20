@@ -1,0 +1,31 @@
+.working {
+  &__item {
+    &::before {
+      content: "";
+      display: inline-block;
+      background-color: $primary-color;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 32px;
+      width: 60px;
+      height: 60px;
+      position: relative;
+    }
+
+    &--food::before {
+      background-image: url("../../images/icons/stack.svg#icon-food");
+    }
+
+    &--powder::before {
+      background-image: url("../../images/icons/stack.svg#icon-powder");
+    }
+
+    &--replace::before {
+      background-image: url("../../images/icons/stack.svg#icon-replace");
+    }
+
+    &--change::before {
+      background-image: url("../../images/icons/stack.svg#icon-change");
+    }
+  }
+}

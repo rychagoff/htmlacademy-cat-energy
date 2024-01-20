@@ -1,9 +1,22 @@
 .banner {
   background-color: rgba($primary-color, 0.85);
-}
 
-.banner__text {
-  font-size: 16px;
-  line-height: 20px;
-  color: $white-text;
+  &__text {
+    font-size: 16px;
+    line-height: 20px;
+    color: $white-text;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: $white-text;
+    mask-image: url("../../images/icons/stack.svg#icon-gift");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 78px;
+    height: 80px;
+    position: relative;
+  }
 }

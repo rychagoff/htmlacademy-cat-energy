@@ -1,3 +1,22 @@
 .product-card {
   background-color: $grey-bg;
+
+  &__link {
+    &::after {
+      content: "";
+      display: inline-block;
+      background-color: $black-text;
+      mask-image: url("../../images/icons/stack.svg#arrow");
+      mask-position: -8px;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      width: 32px;
+      height: 12px;
+      position: relative;
+    }
+
+    &:hover::after {
+      mask-position: 0;
+    }
+  }
 }

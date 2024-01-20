@@ -1,9 +1,30 @@
-.catalog-card__title {
-  color: $darken-text;
-}
+.catalog-card {
+  &__title {
+    color: $darken-text;
+  }
 
-.catalog-card__description {
-  font-size: 12px;
-  line-height: 16px;
-  color: $grey-text;
+  &__description {
+    font-size: 12px;
+    line-height: 16px;
+    color: $grey-text;
+  }
+
+  &--more::before {
+    content: "";
+    display: block;
+    background-color: $grey-lighten;
+    mask-image: url("../../images/icons/stack.svg#plus-mobile");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 30px;
+    height: 30px;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      mask-image: url("../../images/icons/stack.svg#plus");
+      width: 60px;
+      height: 60px;
+    }
+  }
 }

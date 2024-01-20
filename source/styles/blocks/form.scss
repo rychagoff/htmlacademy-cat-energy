@@ -1,5 +1,25 @@
-.form__fieldset {
-  font-family: $header-font;
-  font-size: 16px;
-  color: $grey-text;
+.form {
+  &__fieldset {
+    font-family: $header-font;
+    font-size: 16px;
+    color: $grey-text;
+  }
+
+  &__column {
+    &--email .input {
+      background-image: url("../../images/icons/stack.svg#email");
+      background-position: center right 12px;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      padding-right: 44px;
+    }
+
+    &--phone .input {
+      background-image: url("../../images/icons/stack.svg#phone");
+      background-position: center right 12px;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      padding-right: 44px;
+    }
+  }
 }
