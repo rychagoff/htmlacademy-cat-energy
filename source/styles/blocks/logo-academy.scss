@@ -1,4 +1,6 @@
 .logo-academy {
+  text-decoration: none;
+
   &__text {
     font-size: 16px;
     line-height: 20px;
@@ -16,5 +18,21 @@
     width: 27px;
     height: 34px;
     position: relative;
+  }
+
+  &:hover::after {
+    background-color: $primary-color;
+  }
+
+  &:focus::after {
+    background-color: $primary-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:active::after {
+    background-color: $primary-color;
   }
 }

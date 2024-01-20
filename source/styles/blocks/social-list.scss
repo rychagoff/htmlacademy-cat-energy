@@ -26,5 +26,18 @@
     &--telegram {
       --bgi: url("../../images/icons/stack.svg#tg");
     }
+
+    &:hover::before {
+      background-color: $primary-color;
+    }
+
+    &:focus::before {
+      background-color: $primary-color;
+    }
+
+    &:active::before {
+      background-color: $primary-color;
+      opacity: 0.3;
+    }
   }
 }

@@ -1,7 +1,27 @@
-.main-footer__contacts {
-  background-color: $grey-bg;
-}
+.main-footer {
+  &__contacts {
+    background-color: $grey-bg;
+  }
 
-.main-footer__links {
-  background-color: $grey-bg;
+  &__links {
+    background-color: $grey-bg;
+  }
+
+  &__logo {
+    & svg {
+      color: $black-text-2;
+
+      &:hover {
+        color: $eclipse;
+      }
+
+      &:focus {
+        color: $eclipse;
+      }
+
+      &:active {
+        color: $dim-grey;
+      }
+    }
+  }
 }
