@@ -15,43 +15,61 @@
   <body class="page__body">
 
     <header class="main-header">
-      <a class="main-header__logo" href="index.html">
-        <picture>
-          <source type="image/svg+xml" media="(min-width: 1200px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
-          <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
-          <img class="main-header__image" src="images/logos/logo-mobile.svg" width="33" height="38" alt="">
-        </picture>
-        <img class="main-header__text logo" src="images/logos/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
-      </a>
-      <nav class="main-nav">
-        <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
-        </button>
-        <ul class="main-nav__list">
-          <li class="main-nav__item main-nav__item--active">
-            <span class="main-nav__link link">Главная</span>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link link" href="catalog.html">Каталог продукции</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link link" href="form.html">Подбор программы</a>
-          </li>
-        </ul>
-      </nav>
+
+      <div class="container">
+        <div class="main-header__wrapper">
+
+          <a class="main-header__logo" href="index.html">
+            <picture>
+              <source type="image/svg+xml" media="(min-width: 1200px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
+              <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
+              <img class="main-header__image" src="images/logos/logo-mobile.svg" width="33" height="38" alt="">
+            </picture>
+            <img class="main-header__text logo" src="images/logos/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
+          </a>
+          <nav class="main-nav">
+            <button class="main-nav__toggle" type="button">
+              <span class="visually-hidden">Открыть меню</span>
+            </button>
+            <ul class="main-nav__list">
+              <li class="main-nav__item main-nav__item--active">
+                <span class="main-nav__link link">Главная</span>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link link" href="catalog.html">Каталог продукции</a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link link" href="form.html">Подбор программы</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+
     </header>
 
     <main class="main-container">
 
       <section class="hero">
-        <h1 class="hero__title title title--lg">Функциональное питание для котов</h1>
-        <p class="hero__description">Занялся собой? Займись котом!</p>
-        <picture>
-          <source type="image/png" media="(min-width: 1200px)" srcset="images/hero-product-desktop@1x.png 1x, images/hero-product-desktop@2x.png 2x" width="552" height="500">
-          <source type="image/png" media="(min-width: 768px)" srcset="images/hero-product-tablet@1x.png 1x, images/hero-product-tablet@2x.png 2x" width="710" height="610">
-          <img class="hero__image" src="images/hero-product-mobile@1x.png" srcset="images/hero-product-mobile@2x.png 2x" width="280" height="270" alt="Фото продукта 'Кэт энерджи'">
-        </picture>
-        <a class="hero__button button button--primary" href="#">Подобрать программу</a>
+
+        <div class="container">
+          <div class="hero__wrapper">
+
+            <h1 class="hero__title title title--lg">Функциональное питание для котов</h1>
+            <p class="hero__description">Занялся собой? Займись котом!</p>
+            <div class="hero__image">
+              <picture>
+                <source type="image/png" media="(min-width: 1200px)" srcset="images/hero-product-desktop@1x.png 1x, images/hero-product-desktop@2x.png 2x" width="552" height="500">
+                <source type="image/png" media="(min-width: 768px)" srcset="images/hero-product-tablet@1x.png 1x, images/hero-product-tablet@2x.png 2x" width="710" height="610">
+                <img src="images/hero-product-mobile@1x.png" srcset="images/hero-product-mobile@2x.png 2x" width="280" height="270" alt="Фото продукта 'Кэт энерджи'">
+              </picture>
+            </div>
+            <a class="hero__button button button--primary" href="#">Подобрать программу</a>
+
+          </div>
+        </div>
+
       </section>
 
       <section class="products">
