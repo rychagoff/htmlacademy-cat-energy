@@ -1,5 +1,41 @@
-.form__fieldset {
-  font-family: $header-font;
-  font-size: 16px;
-  color: $grey-text;
+.form {
+  &__fieldset {
+    font-family: $header-font;
+    font-size: 16px;
+    color: $grey-text;
+  }
+
+  &__column--email &__input-wrapper,
+  &__column--phone &__input-wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      mask-image: var(--bgi);
+      background-color: $darken-text;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:focus-within::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &__column--email &__input-wrapper {
+    --bgi: url("../../images/icons/stack.svg#email");
+  }
+
+  &__column--phone &__input-wrapper {
+    --bgi: url("../../images/icons/stack.svg#phone");
+  }
+
+  &__column--email &__input,
+  &__column--phone &__input {
+    width: 100%;
+  }
 }

@@ -1,0 +1,43 @@
+.social-list {
+  &__link {
+    display: block;
+
+    &::before {
+      content: "";
+      display: block;
+      background-color: $grey-text-2;
+      mask-image: var(--bgi);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      width: 28px;
+      height: 22px;
+      position: relative;
+    }
+
+    &--vk {
+      --bgi: url("../../images/icons/stack.svg#vk");
+    }
+
+    &--youtube {
+      --bgi: url("../../images/icons/stack.svg#yt");
+    }
+
+    &--telegram {
+      --bgi: url("../../images/icons/stack.svg#tg");
+    }
+
+    &:hover::before {
+      background-color: $primary-color;
+    }
+
+    &:focus::before {
+      background-color: $primary-color;
+    }
+
+    &:active::before {
+      background-color: $primary-color;
+      opacity: 0.3;
+    }
+  }
+}

@@ -1,5 +1,38 @@
-.logo-academy__text {
-  font-size: 16px;
-  line-height: 20px;
-  color: $grey-text;
+.logo-academy {
+  text-decoration: none;
+
+  &__text {
+    font-size: 16px;
+    line-height: 20px;
+    color: $grey-text;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: $grey-text-2;
+    mask-image: url("../../images/icons/stack.svg#academy");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: 27px;
+    height: 34px;
+    position: relative;
+  }
+
+  &:hover::after {
+    background-color: $primary-color;
+  }
+
+  &:focus::after {
+    background-color: $primary-color;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &:active::after {
+    background-color: $primary-color;
+  }
 }

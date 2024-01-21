@@ -1,0 +1,13 @@
+.input {
+  font-family: $header-font;
+  font-size: 16px;
+  color: $grey-text;
+
+  &:hover {
+    border-color: $grey-border;
+  }
+
+  &:focus {
+    border-color: $grey-text;
+  }
+}
