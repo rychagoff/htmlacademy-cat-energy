@@ -5,6 +5,7 @@
     min-height: 694px;
     padding: 224px 0 184px;
     position: relative;
+    overflow: hidden;
   }
 
   &__wrapper {
@@ -34,9 +35,9 @@
     @media (min-width: $desktop-width) {
       left: 50%;
       background-image: linear-gradient(rgba($primary-color, 85%), rgba($primary-color, 85%)), image-set(url("../../images/hero-bg-desktop@1x.webp") 1x type("image/webp"), url("../../images/hero-bg-desktop@2x.webp") 2x type("image/webp"), url("../../images/hero-bg-desktop@1x.jpg") 1x type("image/jpg"), url("../../images/hero-bg-desktop@2x.jpg") 2x type("image/jpg"));
-      background-position: bottom right;
+      background-position: bottom left;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       height: 100%;
     }
   }
