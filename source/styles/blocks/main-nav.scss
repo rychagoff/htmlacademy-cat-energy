@@ -16,31 +16,46 @@
     display: none;
   }
 
-  &--opened .main-nav__list {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: stretch;
+  &--opened .main-nav__item::before,
+  &--opened .main-nav__item:last-of-type::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    display: block;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      content: none;
+    }
   }
 
-  &--opened .main-nav__toggle {
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 11px;
-      right: -3px;
-      width: 100%;
-      height: 2px;
-      background-color: $black-text;
-    }
+  &--opened .main-nav__item::before {
+    top: 0;
+  }
 
-    &::before {
-      transform: rotate(45deg);
-    }
+  &--opened .main-nav__item:last-of-type::after {
+    bottom: 0;
+  }
 
-    &::after {
-      transform: rotate(-45deg);
-    }
+  &--opened .main-nav__toggle::before,
+  &--opened .main-nav__toggle::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: $black-text;
+  }
+
+  &--opened .main-nav__toggle::before {
+    transform: rotate(45deg);
+  }
+
+  &--opened .main-nav__toggle::after {
+    transform: rotate(-45deg);
   }
 
   &--closed .main-nav__toggle {
@@ -57,7 +72,7 @@
   }
 
   &--closed .main-nav__list {
-    @media (max-width: $tablet-width) {
+    @media (max-width: 767px) {
       display: none;
     }
   }
@@ -89,36 +104,13 @@
     // color: $white-text;
   }
 
-  &::before,
-  &:last-of-type::after {
-    content: "";
-    position: absolute;
-    left: -20px;
-    display: block;
-    width: calc(100% + 40px);
-    height: 1px;
-    background-color: $grey-border-2;
-
-    @include viewport-tablet {
-      content: none;
-    }
-  }
-
-  &::before {
-    top: 0;
-  }
-
-  &::after {
-    bottom: 0;
-  }
-
   &--active::after {
     @include viewport-desktop {
       content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -12px;
       left: 0;
-      width: 0%;
+      width: 100%;
       height: 2px;
       background-color: $white-text;
     }
@@ -133,8 +125,8 @@
   text-transform: uppercase;
 
   @include viewport-tablet {
-    // font-size: 18px;
-    // line-height: 24px;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   @include viewport-desktop {
