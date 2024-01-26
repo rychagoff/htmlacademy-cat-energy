@@ -1,6 +1,14 @@
-.main-nav__item {
-  font-family: $header-font;
-  font-size: 20px;
-  line-height: 20px;
-  color: $black-text;
+.main-nav {
+  &__item {
+    font-family: $header-font;
+    font-size: 20px;
+    line-height: 20px;
+    color: $black-text;
+  }
+
+  &__toggle {
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
 }

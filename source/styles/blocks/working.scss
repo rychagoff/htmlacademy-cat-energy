@@ -1,31 +1,92 @@
 .working {
-  &__item {
-    &::before {
-      content: "";
-      display: inline-block;
-      background-color: $primary-color;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 32px;
-      width: 60px;
-      height: 60px;
-      position: relative;
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    counter-reset: working 0;
+
+    @media (min-width: $tablet-width) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 60px;
+      row-gap: 30px;
     }
 
-    &--food::before {
-      background-image: url("../../images/icons/stack.svg#icon-food");
+    @media (min-width: $desktop-width) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 76px;
     }
+  }
 
-    &--powder::before {
-      background-image: url("../../images/icons/stack.svg#icon-powder");
+  &__item-text {
+    @media (min-width: $tablet-width) {
+      margin-top: 0;
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
     }
+  }
+}
 
-    &--replace::before {
-      background-image: url("../../images/icons/stack.svg#icon-replace");
-    }
+.working__item {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 80px 1fr;
+    gap: 30px;
+    margin-right: 76px;
+    position: relative;
+    max-width: 248px;
+  }
 
-    &--change::before {
-      background-image: url("../../images/icons/stack.svg#icon-change");
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    background-color: $primary-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @media (min-width: $tablet-width) {
+      width: 80px;
+      height: 80px;
     }
+  }
+
+  &::after {
+    content: counter(working);
+    display: block;
+    counter-increment: working 1;
+    font-family: $header-font;
+    font-size: 280px;
+    line-height: 1;
+    color: #f2f2f2;
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    top: -40px;
+    z-index: -1;
+  }
+
+  &--food::before {
+    background-image: url("../../images/icons/stack.svg#icon-food");
+  }
+
+  &--powder::before {
+    background-image: url("../../images/icons/stack.svg#icon-powder");
+  }
+
+  &--replace::before {
+    background-image: url("../../images/icons/stack.svg#icon-replace");
+  }
+
+  &--change::before {
+    background-image: url("../../images/icons/stack.svg#icon-change");
   }
 }

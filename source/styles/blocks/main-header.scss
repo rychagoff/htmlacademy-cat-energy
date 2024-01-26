@@ -1,0 +1,18 @@
+.main-header {
+  background-color: $white-text;
+
+  @media (min-width: $desktop-width) {
+    background-color: transparent;
+    position: absolute;
+    top: 55px;
+    width: 100%;
+  }
+
+  &__wrapper {
+    @media (min-width: $tablet-width) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

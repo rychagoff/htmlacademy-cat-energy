@@ -1,8 +1,10 @@
 .form {
-  &__fieldset {
-    font-family: $header-font;
-    font-size: 16px;
-    color: $grey-text;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 80px;
   }
 
   &__column--email &__input-wrapper,
@@ -37,5 +39,23 @@
   &__column--email &__input,
   &__column--phone &__input {
     width: 100%;
+  }
+}
+
+.form__fieldset {
+  font-family: $header-font;
+  font-size: 16px;
+  color: $grey-text;
+
+  &--contacts {
+    grid-column: 1 / -1;
+  }
+
+  &--comment {
+    grid-column: 1 / -1;
+  }
+
+  &--options {
+    grid-column: 1 / -1;
   }
 }

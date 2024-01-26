@@ -1,3 +1,27 @@
+.example {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $desktop-width) {
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $desktop-width) {
+      flex-direction: column;
+    }
+  }
+}
+
 .example__summary {
   font-family: $header-font;
   font-size: 14px;
