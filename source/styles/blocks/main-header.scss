@@ -1,18 +1,47 @@
 .main-header {
   background-color: $white-text;
 
-  @media (min-width: $desktop-width) {
+  @include viewport-desktop {
     background-color: transparent;
     position: absolute;
     top: 55px;
     width: 100%;
+    z-index: 2;
+  }
+}
+
+.main-header__wrapper {
+  position: relative;
+
+  @include viewport-tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.main-header__logo {
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+
+  @include viewport-tablet {
+    padding: 25px 0 0;
   }
 
-  &__wrapper {
-    @media (min-width: $tablet-width) {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  @include viewport-desktop {
+    padding: 0;
   }
+}
+
+.main-header__image {
+  margin-right: 56px;
+
+  @include viewport-tablet {
+    margin-right: 13px;
+  }
+}
+
+.main-header__image img {
+  display: block;
 }

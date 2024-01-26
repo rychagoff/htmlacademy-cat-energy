@@ -1,14 +1,158 @@
 .main-nav {
-  &__item {
-    font-family: $header-font;
-    font-size: 20px;
-    line-height: 20px;
-    color: $black-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  @include viewport-tablet {
+    padding-top: 25px;
   }
 
-  &__toggle {
-    @media (min-width: $tablet-width) {
+  @include viewport-desktop {
+    padding-top: 0;
+  }
+
+  &--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  &--opened .main-nav__list {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: stretch;
+  }
+
+  &--opened .main-nav__toggle {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      right: -3px;
+      width: 100%;
+      height: 2px;
+      background-color: $black-text;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--closed .main-nav__toggle {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $black-text;
+      box-shadow: 0 8px 0 0 $black-text, 0 16px 0 0 $black-text;
+    }
+  }
+
+  &--closed .main-nav__list {
+    @media (max-width: $tablet-width) {
       display: none;
     }
+  }
+}
+
+.main-nav__list {
+  @include reset-list;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @include viewport-tablet {
+    flex-direction: row;
+    gap: 33px;
+  }
+}
+
+.main-nav__item {
+  position: relative;
+  padding: 23px 0;
+  text-align: center;
+
+  @include viewport-tablet {
+    padding: 0;
+  }
+
+  @include viewport-desktop {
+    // color: $white-text;
+  }
+
+  &::before,
+  &:last-of-type::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    display: block;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      content: none;
+    }
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &--active::after {
+    @include viewport-desktop {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: $white-text;
+    }
+  }
+}
+
+.main-nav__link {
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include viewport-tablet {
+    // font-size: 18px;
+    // line-height: 24px;
+  }
+
+  @include viewport-desktop {
+    color: $white-text;
+  }
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: 0;
+
+  @media (min-width: $tablet-width) {
+    display: none;
   }
 }

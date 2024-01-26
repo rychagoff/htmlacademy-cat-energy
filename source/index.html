@@ -20,14 +20,19 @@
         <div class="main-header__wrapper">
 
           <a class="main-header__logo" href="index.html">
-            <picture>
-              <source type="image/svg+xml" media="(min-width: 1200px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
-              <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
-              <img class="main-header__image" src="images/logos/logo-mobile.svg" width="33" height="38" alt="">
-            </picture>
+            <div class="main-header__image">
+              <picture>
+                <source type="image/svg+xml" media="(min-width: 1440px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
+                <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
+                <img src="images/logos/logo-mobile.svg" width="33" height="38" alt="">
+              </picture>
+            </div>
             <img class="main-header__text logo" src="images/logos/logo-text.svg" width="100" height="18" alt="Функиональное питание для котов 'Кэт энерджи'">
           </a>
-          <nav class="main-nav">
+          <!-- main-nav--nojs   - При ошибке JS в браузере -->
+          <!-- main-nav--closed - Состояние закрытого меню -->
+          <!-- main-nav--opened - Состояние открытого меню -->
+          <nav class="main-nav main-nav--closed main-nav--nojs">
             <button class="main-nav__toggle" type="button">
               <span class="visually-hidden">Открыть меню</span>
             </button>
@@ -230,6 +235,8 @@
       </div>
 
     </footer>
+
+    <script src="../source/scripts/index.js"></script>
 
   </body>
 </html>
