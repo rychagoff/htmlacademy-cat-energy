@@ -1,30 +1,182 @@
 .example {
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
+  padding: 25px 0 40px;
+  background-color: $grey-bg-2;
 
-    @media (min-width: $desktop-width) {
-      flex-direction: row;
-    }
+  @include viewport-tablet {
+    padding: 0 0 100px;
+    // background: linear-gradient(to bottom, $white-text 58%, $grey-bg-2 58%);
+    background: linear-gradient(to bottom, $white-text 620px, $grey-bg-2 620px);
   }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
+  @include viewport-desktop {
+    padding: 0 0 75px;
+    // background: linear-gradient(to bottom, $white-text 22%, $grey-bg-2 22%);
+    background: linear-gradient(to bottom, $white-text 136px, $grey-bg-2 136px);
+  }
 
-    @media (min-width: $tablet-width) {
-      flex-direction: row;
+  &::before {
+    @include viewport-tablet {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-bottom: 45px;
+      background-color: $grey-border-2;
     }
 
-    @media (min-width: $desktop-width) {
-      flex-direction: column;
+    @include viewport-desktop {
+      display: none;
     }
   }
 }
 
+.example__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.example__text {
+  margin-bottom: 20px;
+
+  @include viewport-tablet {
+    margin-bottom: 100px;
+  }
+
+  @include viewport-desktop {
+    max-width: 436px;
+    margin-bottom: 0;
+  }
+}
+
+.example__title {
+  margin-bottom: 40px;
+
+  @include viewport-tablet {
+    margin-bottom: 60px;
+  }
+
+  @include viewport-desktop {
+    margin-bottom: 76px;
+  }
+}
+
+.example__description {
+  color: $grey-text;
+
+  @include viewport-desktop {
+    padding-top: 70px;
+  }
+}
+
+.example__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+
+  @include viewport-tablet {
+    flex-direction: row;
+    gap: 43px;
+    margin-top: 55px;
+  }
+
+  @include viewport-desktop {
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 70px;
+  }
+}
+
 .example__summary {
+  margin: 0;
+  // flex-grow: 1;
   font-family: $header-font;
-  font-size: 14px;
   line-height: 20px;
-  color: $black-text;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include viewport-tablet {
+    padding-top: 12px;
+    font-size: 20px;
+    text-align: right;
+  }
+
+  @include viewport-desktop {
+    padding-top: 0;
+    text-align: left;
+  }
+}
+
+.example__summary span {
+  @include viewport-tablet {
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+.example__slider {
+  position: relative;
+  max-width: 280px;
+
+  @include viewport-tablet {
+    max-width: 560px;
+  }
+}
+
+.example__image {
+  &--before {
+    clip-path: inset(0 50% 0 0);
+  }
+
+  &--after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    clip-path: inset(0 0 0 50%);
+  }
+}
+
+.example__image img {
+  display: block;
+}
+
+.example__range {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color: $grey-text-2;
+    border-radius: 2px;
+  }
+}
+
+.example__button {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.example__button svg {
+  display: block;
 }
