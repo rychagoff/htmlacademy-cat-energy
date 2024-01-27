@@ -126,6 +126,7 @@
   grid-column: 2 / -1;
   grid-row: 1 / 2;
   align-items: center;
+  text-transform: uppercase;
 
   @include viewport-tablet {
     grid-column: 1 / 2;

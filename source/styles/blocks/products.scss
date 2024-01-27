@@ -1,5 +1,13 @@
 .products {
-  margin-bottom: 54px;
+  margin-bottom: 20px;
+
+  @include viewport-tablet {
+    margin-bottom: 45px;
+  }
+
+  @include viewport-desktop {
+    margin-bottom: 72px;
+  }
 }
 
 .products__list {
