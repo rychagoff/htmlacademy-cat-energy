@@ -3,7 +3,12 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
 
+  // @include viewport-tablet {
+  //   padding: 60px 40px;
+  // }
+
   @include viewport-desktop {
+    gap: 87px;
     max-width: 565px;
     padding: 60px 80px;
     background-color: $white-text;
