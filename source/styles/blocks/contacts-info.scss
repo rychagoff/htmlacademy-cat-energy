@@ -1,29 +1,45 @@
 .contacts-info {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 
-  @media (min-width: $desktop-width) {
+  @include viewport-desktop {
+    max-width: 565px;
+    padding: 60px 80px;
     background-color: $white-text;
-    // position: absolute;
-    // left: 0;
-    // top: 95px;
   }
+}
 
-  &__welcome {
-    font-family: $header-font;
-    font-size: 16px;
-    line-height: 20px;
-    color: $darken-text;
+.contacts-info__welcome {
+  max-width: 160px;
+  margin: 0;
+  font-family: $header-font;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $black-text-2;
 
-    @media (min-width: $tablet-width) {
-      font-size: 20px;
-      line-height: 26px;
-    }
+  @include viewport-tablet {
+    font-size: 20px;
+    line-height: 26px;
   }
+}
 
-  &__address {
-    font-style: normal;
-    line-height: 20px;
-    color: $grey-text;
+.contacts-info__address {
+  max-width: 160px;
+  margin-left: auto;
+  font-style: normal;
+  line-height: 20px;
+  color: $grey-text;
+
+  @include viewport-tablet {
+    text-align: right;
+  }
+}
+
+.contacts-info__address .street {
+  @include viewport-tablet {
+    display: block;
+    margin-bottom: 20px;
   }
 }
