@@ -1,33 +1,5 @@
 .main-footer {
   position: relative;
-
-  &__map {
-    @media (min-width: $desktop-width) {
-      height: 400px;
-    }
-  }
-
-  &__links {
-    background-color: $grey-bg;
-  }
-
-  &__logo {
-    & svg {
-      color: $black-text-2;
-
-      &:hover {
-        color: $eclipse;
-      }
-
-      &:focus {
-        color: $eclipse;
-      }
-
-      &:active {
-        color: $dim-grey;
-      }
-    }
-  }
 }
 
 .main-footer__contacts {
@@ -40,18 +12,63 @@
 
   @include viewport-desktop {
     position: absolute;
-    top: 95px;
-    bottom: 106px;
+    top: 35px;
     width: 100%;
   }
 }
 
-.main-footer__links .main-footer__wrapper {
-  display: flex;
-  flex-direction: column;
+.main-footer__map-iframe {
+  display: block;
 
-  @media (min-width: $tablet-width) {
-    flex-direction: row;
-    justify-content: space-between;
+  @include viewport-tablet {
+    height: 400px;
+  }
+}
+
+.main-footer__map img {
+  display: none;
+}
+
+.main-footer__links {
+  padding: 40px 0;
+  background-color: $grey-bg;
+
+  @include viewport-tablet {
+    padding: 56px 0;
+  }
+}
+
+.main-footer__links .main-footer__wrapper {
+  display: grid;
+  gap: 20px;
+
+  @include viewport-tablet {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+
+.main-footer__logo {
+  display: flex;
+  justify-content: center;
+
+  @include viewport-tablet {
+    justify-content: flex-start;
+  }
+}
+
+.main-footer__logo svg {
+  color: $black-text-2;
+
+  &:hover {
+    color: $eclipse;
+  }
+
+  &:focus {
+    color: $eclipse;
+  }
+
+  &:active {
+    color: $dim-grey;
   }
 }
