@@ -1,14 +1,33 @@
 .additional-list {
-  display: grid;
-  grid-template-columns: 1fr;
+  @include reset-list;
 
-  // @media (min-width: $tablet-width) {
-  //   grid-template-columns: repeat(2, 1fr);
-  //   gap: 60px;
-  // }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
 
-  // @media (min-width: $desktop-width) {
-  //   grid-template-columns: repeat(4, 1fr);
-  //   gap: 80px;
-  // }
+  @include viewport-tablet {
+    margin-bottom: 70px;
+  }
+
+  @include viewport-desktop {
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+}
+
+.additional-list__item {
+  padding: 14px 0 20px;
+  border-top: 1px solid $grey-border;
+
+  &:last-of-type {
+    border-bottom: 1px solid $grey-border;
+  }
+
+  @include viewport-tablet {
+    padding: 26px 0 28px;
+  }
+
+  @include viewport-desktop {
+    padding: 15px 0;
+  }
 }

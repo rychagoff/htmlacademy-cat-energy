@@ -22,3 +22,11 @@
     border-bottom: 1px solid $grey-border;
   }
 }
+
+.parameters__description {
+  margin-left: 0;
+
+  @include viewport-tablet {
+    margin-left: 50px;
+  }
+}
