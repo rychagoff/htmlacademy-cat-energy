@@ -1,0 +1,80 @@
+.card-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include viewport-tablet {
+    padding: 48px 35px 38px;
+    border: 2px solid $grey-bg;
+  }
+
+  &::before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 23px;
+    background-color: $grey-lighten;
+    mask-image: url("../../images/icons/stack.svg#plus-mobile");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    @include viewport-tablet {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 50px;
+      mask-image: url("../../images/icons/stack.svg#plus");
+    }
+
+    @include viewport-desktop {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.card-more__info {
+  margin-bottom: 21px;
+  text-align: center;
+
+  @include viewport-tablet {
+    max-width: 170px;
+  }
+}
+
+.card-more__title {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  color: $black-text-2;
+
+  @include viewport-tablet {
+    margin-bottom: 23px;
+  }
+
+  @include viewport-desktop {
+    margin-bottom: 26px;
+  }
+}
+
+.card-more__description {
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: $grey-text;
+
+  @include viewport-tablet {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+.card-more__buttons {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+
+  @include viewport-tablet {
+    margin-top: auto;
+  }
+}

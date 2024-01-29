@@ -2,11 +2,16 @@
   background-color: $white-text;
 
   @include viewport-desktop {
-    background-color: transparent;
-    position: absolute;
-    top: 55px;
     width: 100%;
+    background-color: transparent;
     z-index: 2;
+  }
+
+  &--index {
+    @include viewport-desktop {
+      position: absolute;
+      top: 55px;
+    }
   }
 }
 

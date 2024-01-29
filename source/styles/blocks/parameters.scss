@@ -1,5 +1,24 @@
 .parameters {
+  @include reset-list;
+
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   line-height: 16px;
   color: $grey-text;
+
+  @include viewport-tablet {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.parameters__item {
+  display: flex;
+  justify-content: space-between;
+
+  @include viewport-tablet {
+    padding: 5px;
+    border-bottom: 1px solid $grey-border;
+  }
 }

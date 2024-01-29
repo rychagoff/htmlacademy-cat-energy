@@ -1,14 +1,63 @@
 .catalog-list {
+  @include reset-list;
+
   display: grid;
   grid-template-columns: 1fr;
 
-  @media (min-width: $tablet-width) {
+  @include viewport-tablet {
     grid-template-columns: repeat(2, 1fr);
-    gap: 60px;
+    column-gap: 60px;
+    row-gap: 140px;
+    padding-top: 80px;
   }
 
-  @media (min-width: $desktop-width) {
+  @include viewport-desktop {
     grid-template-columns: repeat(4, 1fr);
-    gap: 80px;
+    column-gap: 80px;
   }
+}
+
+.catalog-list__item {
+  position: relative;
+  display: flex;
+  padding: 20px 0 25px;
+
+  @include viewport-tablet {
+    padding: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(50% - var(--screen-width)/2);
+    left: calc(50% - var(--screen-width)/2);
+    display: block;
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      display: none;
+    }
+  }
+
+  &:last-of-type::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: calc(50% - var(--screen-width)/2);
+    left: calc(50% - var(--screen-width)/2);
+    display: block;
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      display: none;
+    }
+  }
+}
+
+.catalog-list__card {
+  width: 100%;
+  height: 100%;
 }

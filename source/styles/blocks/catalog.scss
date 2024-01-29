@@ -1,0 +1,27 @@
+.catalog__title {
+  position: relative;
+  padding: 27px 0 41px;
+
+  @include viewport-tablet {
+    padding: 65px 0 84px;
+  }
+
+  @include viewport-desktop {
+    padding: 74px 0 84px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(50% - var(--screen-width)/2);
+    left: calc(50% - var(--screen-width)/2);
+    display: block;
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      display: none;
+    }
+  }
+}
