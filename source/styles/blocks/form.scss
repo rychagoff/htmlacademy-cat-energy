@@ -100,23 +100,15 @@
 
   @include viewport-tablet {
     margin-bottom: 76px;
-
-    // &::before {
-    //   right: calc(100% + var(--wrapper-offset));
-    // }
-
-    // &::after {
-    //   left: calc(100% + var(--wrapper-offset));
-    // }
   }
 
-  @include viewport-desktop {
-    // &::before,
-    // &::after {
-    //   right: initial;
-    //   left: initial;
-    // }
-  }
+  // @include viewport-desktop {
+  //   &::before,
+  //   &::after {
+  //     right: initial;
+  //     left: initial;
+  //   }
+  // }
 }
 
 .form__column {
@@ -198,6 +190,18 @@
 
   &--phone::after {
     --bgi: url("../../images/icons/stack.svg#phone");
+  }
+
+  &--email:focus-within,
+  &--phone:focus-within {
+    &::after {
+      background-color: $primary-color;
+    }
+  }
+
+  &--email:focus-within .input,
+  &--phone:focus-within .input {
+    border-color: $grey-text;
   }
 }
 

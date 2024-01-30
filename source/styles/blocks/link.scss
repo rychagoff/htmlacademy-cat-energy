@@ -4,6 +4,16 @@
 
   &--arrow {
     gap: 15px;
+
+    &:hover::after,
+    &:focus-visible::after,
+    &:active::after {
+      mask-position: 0;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   &--arrow::after {
@@ -19,9 +29,5 @@
     @include viewport-tablet {
       margin-left: 25px;
     }
-  }
-
-  &--arrow:hover::after {
-    mask-position: 0;
   }
 }

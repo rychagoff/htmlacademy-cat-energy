@@ -20,9 +20,7 @@
     position: absolute;
     top: 95px;
     left: calc(50% - (1220px / 2));
-    // left: calc(var(--screen-width) - $desktop-width);
     padding: 0;
-    /* max-width: 565px; */
     z-index: 2;
   }
 }

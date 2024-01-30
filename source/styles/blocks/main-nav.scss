@@ -96,10 +96,6 @@
   padding: 23px 0;
   text-align: center;
 
-  @include viewport-tablet {
-    padding: 0;
-  }
-
   &--white::after,
   &--active::after {
     content: "";
@@ -109,6 +105,7 @@
     width: 0;
     height: 2px;
     background-color: $primary-color;
+    transition: width 0.3s;
   }
 
   &--white::after {
@@ -119,6 +116,24 @@
 
   &--active::after {
     width: 100%;
+  }
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.6;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    width: 100%;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @include viewport-tablet {
+    padding: 0;
   }
 }
 

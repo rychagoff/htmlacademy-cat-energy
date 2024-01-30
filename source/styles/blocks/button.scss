@@ -12,11 +12,31 @@
 
   &--primary {
     background-color: $primary-color;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $primary-color-hover;
+    }
+
+    &:active {
+      color: rgba($white-text, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
   }
 
   &--secondary {
     background-color: $grey-bg;
     color: $grey-text;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $grey-bg-2;
+    }
   }
 
   @include viewport-tablet {

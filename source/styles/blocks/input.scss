@@ -9,10 +9,16 @@
   color: $grey-text;
   border: 1px solid $grey-border-2;
 
-  @include viewport-tablet {
-    padding: 10px 20px;
-    font-size: 20px;
-    line-height: 30px;
+  &:hover {
+    border-color: $grey-border;
+  }
+
+  &:focus-visible {
+    border-color: $grey-text;
+  }
+
+  &--error {
+    border-color: $error-color;
   }
 
   &--icon {
@@ -26,11 +32,9 @@
     }
   }
 
-  &:hover {
-    border-color: $grey-border;
-  }
-
-  &:focus {
-    border-color: $grey-text;
+  @include viewport-tablet {
+    padding: 10px 20px;
+    font-size: 20px;
+    line-height: 30px;
   }
 }

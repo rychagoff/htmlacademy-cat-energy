@@ -1,6 +1,10 @@
 .label-control {
   gap: 15px;
 
+  &:focus-within .label-control__mark {
+    border-color: $grey-control-hover;
+  }
+
   @include viewport-tablet {
     gap: 20px;
   }
@@ -38,16 +42,20 @@
   height: 30px;
   border: 1px solid $grey-border;
 
-  @include viewport-tablet {
-    width: 40px;
-    height: 40px;
-  }
-
   &--radio {
     border-radius: 50%;
   }
 
-  &--checkbox {
-    //
+  // &--checkbox {
+
+  // }
+
+  &:hover {
+    border-color: $grey-control-hover;
+  }
+
+  @include viewport-tablet {
+    width: 40px;
+    height: 40px;
   }
 }

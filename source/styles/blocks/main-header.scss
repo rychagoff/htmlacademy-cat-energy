@@ -43,6 +43,15 @@
   align-items: center;
   padding: 13px 0;
 
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
   @include viewport-tablet {
     padding: 25px 0;
   }
