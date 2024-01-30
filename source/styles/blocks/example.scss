@@ -1,16 +1,14 @@
 .example {
-  padding: 25px 0 40px;
+  padding: 24px 0 40px;
   background-color: $grey-bg-2;
 
   @include viewport-tablet {
     padding: 0 0 100px;
-    // background: linear-gradient(to bottom, $white-text 58%, $grey-bg-2 58%);
     background: linear-gradient(to bottom, $white-text 620px, $grey-bg-2 620px);
   }
 
   @include viewport-desktop {
     padding: 0 0 75px;
-    // background: linear-gradient(to bottom, $white-text 22%, $grey-bg-2 22%);
     background: linear-gradient(to bottom, $white-text 136px, $grey-bg-2 136px);
   }
 

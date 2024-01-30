@@ -12,10 +12,17 @@
     padding-top: 0;
   }
 
+  &--closed .main-nav__list,
   &--nojs .main-nav__toggle {
     display: none;
   }
 
+  &--nojs .main-nav__list {
+    display: flex;
+  }
+
+  &--nojs .main-nav__item::before,
+  &--nojs .main-nav__item:last-of-type::after,
   &--opened .main-nav__item::before,
   &--opened .main-nav__item:last-of-type::after {
     content: "";
@@ -31,10 +38,12 @@
     }
   }
 
+  &--nojs .main-nav__item::before,
   &--opened .main-nav__item::before {
     top: 0;
   }
 
+  &--nojs .main-nav__item:last-of-type::after,
   &--opened .main-nav__item:last-of-type::after {
     bottom: 0;
   }
@@ -62,7 +71,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: 3px;
+      top: 2px;
       right: 0;
       width: 100%;
       height: 2px;
@@ -71,11 +80,11 @@
     }
   }
 
-  &--closed .main-nav__list {
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
+  // &--closed .main-nav__list {
+  //   @media (max-width: 767px) {
+  //     display: none;
+  //   }
+  // }
 }
 
 .main-nav__list {
@@ -103,14 +112,16 @@
 
   &--white::after,
   &--active::after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: $primary-color;
-    transition: width 0.3s;
+    @include viewport-tablet {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: width 0.3s;
+    }
   }
 
   &--white::after {

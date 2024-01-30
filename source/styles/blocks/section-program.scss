@@ -1,6 +1,6 @@
 .section-program__header {
   position: relative;
-  padding: 27px 0 40px;
+  padding: 27px 0 25px;
 
   @include viewport-tablet {
     padding: 40px 0;
@@ -40,7 +40,7 @@
 }
 
 .section-program__title {
-  margin-bottom: 37px;
+  margin-bottom: 35px;
 
   @include viewport-tablet {
     margin-bottom: 55px;

@@ -20,10 +20,10 @@
 .catalog-list__item {
   position: relative;
   display: flex;
-  padding: 20px 0 25px;
+  padding: 23px 0 24px;
 
-  @include viewport-tablet {
-    padding: 0;
+  &--more {
+    padding: 26px 0;
   }
 
   &::before {
@@ -54,6 +54,10 @@
     @include viewport-tablet {
       display: none;
     }
+  }
+
+  @include viewport-tablet {
+    padding: 0;
   }
 }
 

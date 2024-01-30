@@ -3,7 +3,7 @@
 
   display: flex;
   flex-direction: column;
-  margin-bottom: 35px;
+  margin-bottom: 34px;
 
   @include viewport-tablet {
     margin-bottom: 70px;
@@ -16,7 +16,7 @@
 }
 
 .additional-list__item {
-  padding: 14px 0 20px;
+  padding: 13px 0 18px;
   border-top: 1px solid $grey-border;
 
   &:last-of-type {
