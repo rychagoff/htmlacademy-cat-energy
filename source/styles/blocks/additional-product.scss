@@ -12,32 +12,32 @@
     line-height: 36px;
   }
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 60%;
-    width: 100vw;
-    height: 2px;
-    background-color: $primary-color;
-    transform: translateY(-50%);
-  }
+  // &::before,
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 60%;
+  //   width: 100vw;
+  //   height: 2px;
+  //   background-color: $primary-color;
+  //   transform: translateY(-50%);
+  // }
 
-  &::before {
-    right: calc(100% + var(--padding-offset));
+  // &::before {
+  //   right: calc(100% + var(--padding-offset));
 
-    @include viewport-tablet {
-      right: 100%;
-    }
-  }
+  //   @include viewport-tablet {
+  //     right: 100%;
+  //   }
+  // }
 
-  &::after {
-    left: calc(100% + var(--padding-offset));
+  // &::after {
+  //   left: calc(100% + var(--padding-offset));
 
-    @include viewport-tablet {
-      left: 100%;
-    }
-  }
+  //   @include viewport-tablet {
+  //     left: 100%;
+  //   }
+  // }
 }
 
 .additional-product__content {

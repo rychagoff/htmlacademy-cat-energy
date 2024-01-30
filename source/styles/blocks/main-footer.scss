@@ -9,9 +9,11 @@
 .main-footer__contacts {
   position: relative;
   padding: 26px 0;
+  background-color: $grey-bg;
 
   @include viewport-tablet {
     padding: 60px 40px;
+    background-color: $white-text;
   }
 
   @include viewport-desktop {

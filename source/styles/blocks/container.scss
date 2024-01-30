@@ -13,7 +13,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    --padding-offset: 60px;
-    max-width: 1340px;
+    --padding-offset: 40px;
+    // max-width: 1340px;
+    max-width: 1300px;
   }
 }

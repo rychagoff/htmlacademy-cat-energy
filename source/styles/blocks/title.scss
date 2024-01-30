@@ -16,10 +16,11 @@
 
   &--md {
     font-size: 24px;
-    line-height: 36px;
+    line-height: 24px;
 
     @include viewport-tablet {
       font-size: 36px;
+      line-height: 36px;
     }
   }
 
@@ -34,6 +35,52 @@
   }
 
   &--line {
-    display: inline-flex;
+    position: relative;
+    display: inline-block;
+  }
+
+  &--line span::after {
+    content: "\A";
+    white-space: pre;
+
+    @include viewport-tablet {
+      white-space: inherit;
+    }
+  }
+
+  &--line::before,
+  &--line::after {
+    content: "";
+    position: absolute;
+    // top: 60%;
+    top: 18px;
+    width: 100vw;
+    height: 2px;
+    background-color: $primary-color;
+    transform: translateY(-50%);
+  }
+
+  &--line::before {
+    right: calc(100% + var(--padding-offset));
+
+    @include viewport-tablet {
+      right: calc(100% + var(--wrapper-offset));
+    }
+
+    @include viewport-desktop {
+      right: calc(100% + var(--padding-offset));
+    }
+  }
+
+  &--line::after {
+    left: calc(100% + var(--padding-offset));
+
+    @include viewport-tablet {
+      left: calc(100% + var(--wrapper-offset));
+    }
+
+    @include viewport-desktop {
+      left: calc(100% + var(--padding-offset));
+    }
   }
 }

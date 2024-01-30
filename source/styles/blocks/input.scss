@@ -1,7 +1,30 @@
 .input {
+  padding: 14px;
+  width: 100%;
+  min-height: 45px;
   font-family: $header-font;
   font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
   color: $grey-text;
+  border: 1px solid $grey-border-2;
+
+  @include viewport-tablet {
+    padding: 10px 20px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &--icon {
+    padding-right: 44px;
+  }
+
+  &--about {
+    @include viewport-tablet {
+      height: 100%;
+      max-height: 175px;
+    }
+  }
 
   &:hover {
     border-color: $grey-border;
