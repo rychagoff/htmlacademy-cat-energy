@@ -1,0 +1,63 @@
+.label-control {
+  gap: 15px;
+
+  &:focus-within .label-control__mark {
+    outline: 2px solid $grey-text;
+    outline-offset: -2px;
+    // border-color: $grey-control-hover;
+  }
+
+  @include viewport-tablet {
+    gap: 20px;
+  }
+}
+
+.label-control__radio {
+  &:checked + .label-control__mark::before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: $primary-color;
+    border-radius: 50%;
+
+    @include viewport-tablet {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.label-control__checkbox {
+  &:checked + .label-control__mark {
+    background-image: url("../../images/icons/stack.svg#tick");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.label-control__mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $grey-border;
+
+  &--radio {
+    border-radius: 50%;
+  }
+
+  // &--checkbox {
+
+  // }
+
+  &:hover {
+    border-color: $grey-control-hover;
+  }
+
+  @include viewport-tablet {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,13 +1,14 @@
 .title {
+  margin: 0;
   font-family: $header-font;
   font-weight: 400;
   color: $black-text;
 
   &--lg {
     font-size: 36px;
-    line-height: 36px;
+    line-height: 40px;
 
-    @media screen and (min-width: 768px) {
+    @include viewport-tablet {
       font-size: 60px;
       line-height: 60px;
     }
@@ -15,10 +16,11 @@
 
   &--md {
     font-size: 24px;
-    line-height: 36px;
+    line-height: 24px;
 
-    @media screen and (min-width: 768px) {
+    @include viewport-tablet {
       font-size: 36px;
+      line-height: 36px;
     }
   }
 
@@ -26,9 +28,63 @@
     font-size: 16px;
     line-height: 20px;
 
-    @media screen and (min-width: 768px) {
+    @include viewport-tablet {
       font-size: 20px;
       line-height: 24px;
+    }
+  }
+
+  &--line {
+    position: relative;
+    display: inline-block;
+  }
+
+  &--line span::after {
+    content: "\A";
+    white-space: pre;
+
+    @include viewport-tablet {
+      white-space: inherit;
+    }
+  }
+
+  &--line::before,
+  &--line::after {
+    content: "";
+    position: absolute;
+    // top: 60%;
+    top: 15px;
+    width: 100vw;
+    height: 2px;
+    background-color: $primary-color;
+    transform: translateY(-50%);
+
+    @include viewport-tablet {
+      top: 23px;
+    }
+  }
+
+  &--line::before {
+    right: calc(100% + var(--padding-offset));
+
+    @include viewport-tablet {
+      right: calc(100% + var(--padding-wrapper-offset));
+    }
+
+    @include viewport-desktop {
+      right: calc(100% + var(--padding-offset));
+    }
+  }
+
+  &--line::after {
+    left: calc(100% + var(--padding-offset));
+
+    @include viewport-tablet {
+      left: calc(100% + var(--padding-wrapper-offset));
+    }
+
+    @include viewport-desktop {
+      left: calc(100% + var(--padding-offset));
     }
   }
 }

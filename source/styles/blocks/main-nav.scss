@@ -1,14 +1,189 @@
 .main-nav {
-  &__item {
-    font-family: $header-font;
-    font-size: 20px;
-    line-height: 20px;
-    color: $black-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  // @include viewport-tablet {
+  //   padding-top: 25px;
+  // }
+
+  &--closed .main-nav__list {
+    display: none;
+
+    @include viewport-tablet {
+      display: flex;
+    }
   }
 
-  &__toggle {
-    @media (min-width: $tablet-width) {
-      display: none;
+  &--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  &--nojs .main-nav__list {
+    display: flex;
+  }
+
+  &--nojs .main-nav__item::before,
+  &--nojs .main-nav__item:last-of-type::after,
+  &--opened .main-nav__item::before,
+  &--opened .main-nav__item:last-of-type::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    display: block;
+    width: calc(100% + 40px);
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      content: none;
     }
+  }
+
+  &--nojs .main-nav__item::before,
+  &--opened .main-nav__item::before {
+    top: 0;
+  }
+
+  &--nojs .main-nav__item:last-of-type::after,
+  &--opened .main-nav__item:last-of-type::after {
+    bottom: 0;
+  }
+
+  &--opened .main-nav__toggle::before,
+  &--opened .main-nav__toggle::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: $black-text;
+  }
+
+  &--opened .main-nav__toggle::before {
+    transform: rotate(45deg);
+  }
+
+  &--opened .main-nav__toggle::after {
+    transform: rotate(-45deg);
+  }
+
+  &--closed .main-nav__toggle {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $black-text;
+      box-shadow: 0 8px 0 0 $black-text, 0 16px 0 0 $black-text;
+    }
+  }
+
+  @include viewport-desktop {
+    padding-top: 0;
+  }
+}
+
+.main-nav__list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+
+  @include viewport-tablet {
+    flex-direction: row;
+    gap: 36px;
+  }
+
+  @include viewport-desktop {
+    gap: 34px;
+    max-width: 500px;
+  }
+}
+
+.main-nav__item {
+  position: relative;
+  padding: 23px 0;
+  text-align: center;
+
+  &--white::after,
+  &--active::after {
+    @include viewport-tablet {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: width 0.3s;
+    }
+  }
+
+  &--white::after {
+    @include viewport-desktop {
+      background-color: $white-text;
+    }
+  }
+
+  &--active::after {
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.6;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    width: 100%;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @include viewport-tablet {
+    padding: 0;
+  }
+}
+
+.main-nav__link {
+  display: block;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include viewport-tablet {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include viewport-desktop {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: 0;
+
+  @include viewport-tablet {
+    display: none;
   }
 }

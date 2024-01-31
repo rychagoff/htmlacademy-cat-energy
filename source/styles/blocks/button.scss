@@ -1,22 +1,52 @@
 .button {
+  padding: 10px 20px;
+  display: inline-flex;
+  justify-content: center;
   font-family: $header-font;
   font-size: 16px;
   line-height: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
   color: $white-text;
   border: 0;
-  display: inline-flex;
 
   &--primary {
     background-color: $primary-color;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $primary-color-hover;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $grey-text;
+      outline-offset: -2px;
+    }
+
+    &:active {
+      color: rgba($white-text, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.3;
+    }
   }
 
   &--secondary {
     background-color: $grey-bg;
     color: $grey-text;
+
+    &:hover,
+    &:focus-visible,
+    &:active {
+      background-color: $grey-bg-2;
+    }
   }
 
-  @media screen and (min-width: 768px) {
-    font-size: 20px;
-    line-height: 26px;
+  @include viewport-tablet {
+    padding: 10px 26px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }

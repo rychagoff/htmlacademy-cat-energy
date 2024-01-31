@@ -1,18 +1,39 @@
 .main-header {
   background-color: $white-text;
 
-  @media (min-width: $desktop-width) {
-    background-color: transparent;
-    position: absolute;
-    top: 55px;
-    width: 100%;
+  &--index {
+    @include viewport-desktop {
+      position: absolute;
+      top: 55px;
+    }
   }
 
-  &__wrapper {
-    @media (min-width: $tablet-width) {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+  &--index .main-nav__link {
+    @include viewport-desktop {
+      color: $white-text;
     }
+  }
+
+  &--index &__logo {
+    @include viewport-desktop {
+      padding: 0;
+    }
+  }
+
+  @include viewport-desktop {
+    width: 100%;
+    background-color: transparent;
+    z-index: 2;
+  }
+}
+
+.main-header__wrapper {
+  position: relative;
+
+  @include viewport-tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }

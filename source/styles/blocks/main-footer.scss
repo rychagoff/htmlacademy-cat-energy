@@ -1,58 +1,114 @@
+:root {
+  --screen-width: 100vw;
+}
+
 .main-footer {
   position: relative;
+}
 
-  &__contacts {
-    background-color: $grey-bg;
-    position: relative;
+.main-footer__contacts {
+  position: relative;
+  padding: 26px 0;
+  background-color: $grey-bg;
 
-    @media (min-width: $tablet-width) {
-      // background-color: $white-text;
-    }
-
-    @media (min-width: $desktop-width) {
-      background-color: transparent;
-      width: 100%;
-      max-width: 565px;
-      position: absolute;
-      top: 95px;
-    }
+  &--index {
+    background-color: $white-text;
   }
 
-  &__map {
-    @media (min-width: $desktop-width) {
-      height: 400px;
-    }
+  @include viewport-tablet {
+    padding: 60px 40px;
   }
 
-  &__links {
-    background-color: $grey-bg;
+  @include viewport-desktop {
+    position: absolute;
+    top: 95px;
+    left: calc(50% - (1220px / 2));
+    padding: 0;
+    background-color: $white-text;
+    z-index: 2;
+  }
+}
+
+.main-footer__map {
+  position: relative;
+}
+
+.main-footer__map-iframe {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  z-index: 1;
+
+  @include viewport-tablet {
+    height: 400px;
+  }
+}
+
+.main-footer__map-nojs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.main-footer__map-nojs img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+// .main-footer__map img {
+//   display: none;
+// }
+
+.main-footer__links {
+  padding: 40px 0;
+  background-color: $grey-bg;
+
+  @include viewport-tablet {
+    padding: 57px 0;
   }
 
-  &__logo {
-    & svg {
-      color: $black-text-2;
-
-      &:hover {
-        color: $eclipse;
-      }
-
-      &:focus {
-        color: $eclipse;
-      }
-
-      &:active {
-        color: $dim-grey;
-      }
-    }
+  @include viewport-desktop {
+    padding: 66px 0;
   }
 }
 
 .main-footer__links .main-footer__wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 20px;
 
-  @media (min-width: $tablet-width) {
-    flex-direction: row;
-    justify-content: space-between;
+  @include viewport-tablet {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+
+.main-footer__logo {
+  display: flex;
+  justify-content: center;
+
+  @include viewport-tablet {
+    justify-content: flex-start;
+  }
+}
+
+.main-footer__logo svg {
+  color: $black-text-2;
+
+  &:hover {
+    color: $eclipse;
+  }
+
+  &:focus {
+    color: $eclipse;
+  }
+
+  &:active {
+    color: $dim-grey;
   }
 }

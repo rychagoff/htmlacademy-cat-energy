@@ -1,3 +1,71 @@
-.section-program__description {
-  font-family: $header-font;
+.section-program__header {
+  position: relative;
+  padding: 27px 0 25px;
+
+  @include viewport-tablet {
+    padding: 40px 0 45px;
+  }
+
+  @include viewport-desktop {
+    padding: 20px 0 45px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(50% - var(--screen-width)/2);
+    left: calc(50% - var(--screen-width)/2);
+    display: block;
+    height: 1px;
+    background-color: $grey-border-2;
+
+    @include viewport-tablet {
+      display: none;
+    }
+  }
 }
+
+.section-program__wrapper {
+  padding: 0 var(--padding-wrapper-offset);
+
+  @include viewport-tablet {
+    --padding-wrapper-offset: 40px;
+  }
+
+  @include viewport-desktop {
+    --padding-wrapper-offset: 0px;
+  }
+}
+
+.section-program__title {
+  margin-bottom: 35px;
+
+  @include viewport-tablet {
+    margin-bottom: 55px;
+  }
+
+  // @include viewport-desktop {
+  //   padding: 74px 0 84px;
+  // }
+}
+
+.section-program__description {
+  max-width: 80%;
+  font-family: $header-font;
+  text-transform: uppercase;
+
+  @include viewport-tablet {
+    max-width: 55%;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include viewport-desktop {
+    max-width: 30%;
+  }
+}
+
+// .section-program__description .custom-br {
+// display: block;
+// }

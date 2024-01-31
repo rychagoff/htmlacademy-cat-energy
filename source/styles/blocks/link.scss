@@ -1,0 +1,33 @@
+.link {
+  font-family: $header-font;
+  color: $black-text;
+
+  &--arrow {
+    gap: 15px;
+
+    &:hover::after,
+    &:focus-visible::after,
+    &:active::after {
+      mask-position: 0;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &--arrow::after {
+    content: "";
+    width: 32px;
+    height: 12px;
+    background-color: $black-text;
+    mask-image: url("../../images/icons/stack.svg#arrow");
+    mask-position: -8px;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    @include viewport-tablet {
+      margin-left: 10px;
+    }
+  }
+}
