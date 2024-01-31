@@ -1,0 +1,42 @@
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  @include viewport-tablet {
+    padding: 25px 0;
+  }
+
+  @include viewport-desktop {
+    padding: 55px 0;
+  }
+}
+
+.logo__image {
+  margin-right: 56px;
+
+  @include viewport-tablet {
+    margin-right: 13px;
+  }
+}
+
+.logo__image img {
+  display: block;
+}
+
+.logo__text {
+  @include viewport-desktop {
+    width: 118px;
+    height: 21px;
+  }
+}
+

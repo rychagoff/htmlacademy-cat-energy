@@ -1,12 +1,6 @@
 .main-header {
   background-color: $white-text;
 
-  @include viewport-desktop {
-    width: 100%;
-    background-color: transparent;
-    z-index: 2;
-  }
-
   &--index {
     @include viewport-desktop {
       position: absolute;
@@ -25,6 +19,12 @@
       padding: 0;
     }
   }
+
+  @include viewport-desktop {
+    width: 100%;
+    background-color: transparent;
+    z-index: 2;
+  }
 }
 
 .main-header__wrapper {
@@ -36,46 +36,4 @@
     justify-content: space-between;
     align-items: center;
   }
-}
-
-.main-header__logo {
-  display: flex;
-  align-items: center;
-  padding: 13px 0;
-
-  &:hover,
-  &:focus-visible {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
-
-  @include viewport-tablet {
-    padding: 25px 0;
-  }
-
-  @include viewport-desktop {
-    padding: 55px 0;
-  }
-}
-
-.main-header__text {
-  @include viewport-desktop {
-    width: 118px;
-    height: 21px;
-  }
-}
-
-.main-header__image {
-  margin-right: 56px;
-
-  @include viewport-tablet {
-    margin-right: 13px;
-  }
-}
-
-.main-header__image img {
-  display: block;
 }
