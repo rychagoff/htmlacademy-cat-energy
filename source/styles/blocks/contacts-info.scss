@@ -8,10 +8,8 @@
   // }
 
   @include viewport-desktop {
-    gap: 87px;
-    max-width: 565px;
-    padding: 60px 80px;
-    background-color: $white-text;
+    gap: 85px;
+    padding: 60px 40px;
   }
 }
 
@@ -39,6 +37,10 @@
 
   @include viewport-tablet {
     text-align: right;
+  }
+
+  @include viewport-desktop {
+    text-align: left;
   }
 }
 

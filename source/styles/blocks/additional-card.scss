@@ -15,11 +15,15 @@
   @include viewport-tablet {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
+    align-items: baseline;
+    margin-bottom: 22px;
   }
 
   @include viewport-desktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 40px;
     margin-bottom: 0;
   }
 }
@@ -48,6 +52,12 @@
 
   @include viewport-tablet {
     margin-bottom: 0;
+  }
+
+  @include viewport-desktop {
+    display: grid;
+    grid-template-columns: 80% 15%;
+    gap: 5%;
   }
 }
 

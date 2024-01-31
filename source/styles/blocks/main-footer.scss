@@ -11,9 +11,12 @@
   padding: 26px 0;
   background-color: $grey-bg;
 
+  &--index {
+    background-color: $white-text;
+  }
+
   @include viewport-tablet {
     padding: 60px 40px;
-    background-color: $white-text;
   }
 
   @include viewport-desktop {
@@ -21,8 +24,13 @@
     top: 95px;
     left: calc(50% - (1220px / 2));
     padding: 0;
+    background-color: $white-text;
     z-index: 2;
   }
+}
+
+.main-footer__map {
+  position: relative;
 }
 
 .main-footer__map-iframe {
@@ -37,16 +45,34 @@
   }
 }
 
-.main-footer__map img {
-  display: none;
+.main-footer__map-nojs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
 }
+
+.main-footer__map-nojs img {
+  width: 100%;
+  object-fit: cover;
+}
+
+// .main-footer__map img {
+//   display: none;
+// }
 
 .main-footer__links {
   padding: 40px 0;
   background-color: $grey-bg;
 
   @include viewport-tablet {
-    padding: 56px 0;
+    padding: 57px 0;
+  }
+
+  @include viewport-desktop {
+    padding: 66px 0;
   }
 }
 

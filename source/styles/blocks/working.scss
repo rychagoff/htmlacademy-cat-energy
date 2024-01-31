@@ -29,12 +29,12 @@
   @include viewport-tablet {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 60px;
-    row-gap: 30px;
+    row-gap: 76px;
   }
 
   @include viewport-desktop {
     grid-template-columns: repeat(4, 1fr);
-    gap: 76px;
+    gap: 80px;
   }
 }
 
@@ -44,21 +44,6 @@
   align-items: center;
   gap: 20px;
   max-width: 470px;
-
-  @include viewport-tablet {
-    position: relative;
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: 80px 1fr;
-    align-items: start;
-    gap: 30px;
-    max-width: 324px;
-    margin-right: 74px;
-  }
-
-  @include viewport-desktop {
-    margin-right: 0;
-  }
 
   &::before {
     content: "";
@@ -110,6 +95,21 @@
 
   &--change::before {
     background-image: url("../../images/icons/stack.svg#icon-change");
+  }
+
+  @include viewport-tablet {
+    position: relative;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 80px 1fr;
+    align-items: start;
+    gap: 30px;
+    max-width: 324px;
+    margin-right: 74px;
+  }
+
+  @include viewport-desktop {
+    margin-right: 0;
   }
 }
 

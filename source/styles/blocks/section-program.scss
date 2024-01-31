@@ -3,11 +3,11 @@
   padding: 27px 0 25px;
 
   @include viewport-tablet {
-    padding: 40px 0;
+    padding: 40px 0 45px;
   }
 
   @include viewport-desktop {
-    padding: 20px 0 65px;
+    padding: 20px 0 45px;
   }
 
   &::before {
@@ -27,15 +27,14 @@
 }
 
 .section-program__wrapper {
-  --wrapper-offset: 0px;
-  padding: 0 var(--wrapper-offset);
+  padding: 0 var(--padding-wrapper-offset);
 
   @include viewport-tablet {
-    --wrapper-offset: 40px;
+    --padding-wrapper-offset: 40px;
   }
 
   @include viewport-desktop {
-    --wrapper-offset: 0px;
+    --padding-wrapper-offset: 0px;
   }
 }
 

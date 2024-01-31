@@ -2,16 +2,6 @@
   padding: 24px 0 40px;
   background-color: $grey-bg-2;
 
-  @include viewport-tablet {
-    padding: 0 0 100px;
-    background: linear-gradient(to bottom, $white-text 620px, $grey-bg-2 620px);
-  }
-
-  @include viewport-desktop {
-    padding: 0 0 75px;
-    background: linear-gradient(to bottom, $white-text 136px, $grey-bg-2 136px);
-  }
-
   &::before {
     @include viewport-tablet {
       content: "";
@@ -26,6 +16,16 @@
       display: none;
     }
   }
+
+  @include viewport-tablet {
+    padding: 0 0 100px;
+    background: linear-gradient(to bottom, $white-text 620px, $grey-bg-2 620px);
+  }
+
+  @include viewport-desktop {
+    padding: 0 0 75px;
+    background: linear-gradient(to bottom, $white-text 136px, $grey-bg-2 136px);
+  }
 }
 
 .example__wrapper {
@@ -34,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (min-width: $desktop-width) {
+  @include viewport-desktop {
     flex-direction: row;
     align-items: flex-start;
   }
@@ -44,7 +44,7 @@
   margin-bottom: 20px;
 
   @include viewport-tablet {
-    margin-bottom: 100px;
+    margin-bottom: 104px;
   }
 
   @include viewport-desktop {
@@ -83,13 +83,13 @@
   @include viewport-tablet {
     flex-direction: row;
     gap: 43px;
-    margin-top: 55px;
+    margin-top: 54px;
   }
 
   @include viewport-desktop {
     flex-direction: column;
     gap: 60px;
-    margin-top: 70px;
+    margin-top: 68px;
   }
 }
 
@@ -97,28 +97,33 @@
   margin: 0;
   // flex-grow: 1;
   font-family: $header-font;
-  line-height: 20px;
+  line-height: 21px;
   text-align: center;
   text-transform: uppercase;
 
   @include viewport-tablet {
-    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 8px;
     font-size: 20px;
-    text-align: right;
   }
 
   @include viewport-desktop {
-    padding-top: 0;
-    text-align: left;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 66px;
   }
 }
 
-.example__summary span {
-  @include viewport-tablet {
-    display: block;
-    margin-top: 8px;
-  }
-}
+// .example__summary span {
+//   @include viewport-tablet {
+//     display: block;
+//     margin-top: 8px;
+//   }
+// }
 
 .example__slider {
   position: relative;

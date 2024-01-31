@@ -2,11 +2,11 @@
   margin-bottom: 20px;
 
   @include viewport-tablet {
-    margin-bottom: 45px;
+    margin-bottom: 46px;
   }
 
   @include viewport-desktop {
-    margin-bottom: 72px;
+    margin-bottom: 70px;
   }
 }
 
@@ -16,6 +16,10 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+
+  @include viewport-tablet {
+    gap: 30px;
+  }
 
   @include viewport-desktop {
     grid-template-columns: repeat(2, 1fr);

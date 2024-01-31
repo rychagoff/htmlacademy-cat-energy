@@ -18,8 +18,16 @@
   justify-content: space-between;
 
   @include viewport-tablet {
-    padding: 5px;
+    margin-bottom: 7px;
+    padding-bottom: 4px;
     border-bottom: 1px solid $grey-border;
+  }
+
+  @include viewport-desktop {
+    &:last-of-type {
+      margin-bottom: 7px;
+      padding-bottom: 9px;
+    }
   }
 }
 
@@ -28,5 +36,9 @@
 
   @include viewport-tablet {
     margin-left: 50px;
+  }
+
+  @include viewport-desktop {
+    margin-left: 0;
   }
 }

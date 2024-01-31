@@ -14,7 +14,13 @@
   }
 
   &:focus-visible {
-    border-color: $grey-text;
+    outline: 2px solid $grey-text;
+    outline-offset: -2px;
+    // border-color: $grey-text;
+  }
+
+  &:disabled {
+    opacity: 0.3;
   }
 
   &--error {

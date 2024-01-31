@@ -25,7 +25,11 @@
   border-radius: 3px;
 
   @include viewport-tablet {
-    padding: 15px 30px 20px;
+    padding: 15px 25px 20px;
+  }
+
+  @include viewport-desktop {
+    padding: 14px 25px 20px;
   }
 }
 

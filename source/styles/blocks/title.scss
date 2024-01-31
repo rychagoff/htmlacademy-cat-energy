@@ -58,13 +58,17 @@
     height: 2px;
     background-color: $primary-color;
     transform: translateY(-50%);
+
+    @include viewport-tablet {
+      top: 23px;
+    }
   }
 
   &--line::before {
     right: calc(100% + var(--padding-offset));
 
     @include viewport-tablet {
-      right: calc(100% + var(--wrapper-offset));
+      right: calc(100% + var(--padding-wrapper-offset));
     }
 
     @include viewport-desktop {
@@ -76,7 +80,7 @@
     left: calc(100% + var(--padding-offset));
 
     @include viewport-tablet {
-      left: calc(100% + var(--wrapper-offset));
+      left: calc(100% + var(--padding-wrapper-offset));
     }
 
     @include viewport-desktop {
