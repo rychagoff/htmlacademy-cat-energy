@@ -51,12 +51,13 @@
 .catalog-card__link {
   display: block;
   max-width: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-decoration: none;
 
   @include viewport-tablet {
     align-self: center;
     max-width: 130px;
+    margin-bottom: 20px;
   }
 
   @include viewport-desktop {
