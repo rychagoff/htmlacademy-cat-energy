@@ -4,10 +4,6 @@
   justify-content: center;
   align-items: stretch;
 
-  // @include viewport-tablet {
-  //   padding-top: 25px;
-  // }
-
   &--opened {
     position: absolute;
     top: 100%;
@@ -65,30 +61,6 @@
   padding: 23px 0;
   text-align: center;
 
-  &--white::after,
-  &--active::after {
-    @include viewport-tablet {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: $primary-color;
-      transition: width 0.3s;
-    }
-  }
-
-  &--white::after {
-    @include viewport-desktop {
-      background-color: $white-text;
-    }
-  }
-
-  &--active::after {
-    width: 100%;
-  }
-
   &::before,
   &:last-of-type::after {
     content: "";
@@ -111,41 +83,19 @@
     bottom: 0;
   }
 
-  // &--nojs .main-nav__item::before,
-  // &--nojs .main-nav__item:last-of-type::after,
-  // &--opened .main-nav__item::before,
-  // &--opened .main-nav__item:last-of-type::after {
-  //   content: "";
-  //   position: absolute;
-  //   left: -20px;
-  //   display: block;
-  //   width: calc(100% + 40px);
-  //   height: 1px;
-  //   background-color: $grey-border-2;
+  &--white .main-nav__link::after {
+    @include viewport-desktop {
+      background-color: $white-text;
+    }
+  }
 
-  //   @include viewport-tablet {
-  //     content: none;
-  //   }
-  // }
-
-  // &--nojs .main-nav__item::before,
-  // &--opened .main-nav__item::before {
-  //   top: 0;
-  // }
-
-  // &--nojs .main-nav__item:last-of-type::after,
-  // &--opened .main-nav__item:last-of-type::after {
-  //   bottom: 0;
-  // }
+  &--active .main-nav__link::after {
+    width: 100%;
+  }
 
   &:hover,
   &:focus-visible {
     opacity: 0.6;
-  }
-
-  &:hover::after,
-  &:focus-visible::after {
-    width: 100%;
   }
 
   &:active {
@@ -163,6 +113,23 @@
   line-height: 20px;
   text-decoration: none;
   text-transform: uppercase;
+
+  &::after {
+    @include viewport-tablet {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primary-color;
+      transition: width 0.3s;
+    }
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 
   @include viewport-tablet {
     font-size: 18px;

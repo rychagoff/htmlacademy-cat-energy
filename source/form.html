@@ -14,13 +14,13 @@
   </head>
   <body class="page__body">
 
-    <header class="main-header main-header--index">
+    <header class="main-header">
 
       <div class="container">
         <div class="main-header__wrapper">
 
           <div class="main-header__line">
-            <span class="main-header__logo logo">
+            <a class="main-header__logo logo" href="index.html">
               <div class="logo__image">
                 <picture>
                   <source type="image/svg+xml" media="(min-width: 1440px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
@@ -31,7 +31,7 @@
               <svg class="logo__text" width="101" height="18" aria-hidden="true" focusable="false">
                 <use href="../../images/icons/stack.svg#logo-text"></use>
               </svg>
-            </span>
+            </a>
             <button class="main-header__toggle main-header__toggle--closed main-header__toggle--nojs" type="button">
               <span class="visually-hidden">Открыть меню</span>
             </button>
@@ -39,14 +39,14 @@
 
           <nav class="main-header__nav main-nav main-nav--closed main-nav--nojs">
             <ul class="main-nav__list">
-              <li class="main-nav__item main-nav__item--white main-nav__item--active">
-                <span class="main-nav__link link">Главная</span>
+              <li class="main-nav__item">
+                <a class="main-nav__link link" href="index.html">Главная</a>
               </li>
-              <li class="main-nav__item main-nav__item--white">
+              <li class="main-nav__item">
                 <a class="main-nav__link link" href="catalog.html">Каталог продукции</a>
               </li>
-              <li class="main-nav__item main-nav__item--white">
-                <a class="main-nav__link link" href="form.html">Подбор программы</a>
+              <li class="main-nav__item main-nav__item--active">
+                <span class="main-nav__link link">Подбор программы</span>
               </li>
             </ul>
           </nav>

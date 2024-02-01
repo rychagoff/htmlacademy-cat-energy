@@ -18,16 +18,20 @@
   border: 0;
 
   &--data {
-    margin-bottom: 24px;
+    margin-bottom: 23px;
 
     @include viewport-tablet {
+      margin-bottom: 72px;
+    }
+
+    @include viewport-desktop {
       margin-bottom: 70px;
     }
   }
 
   &--type {
-    margin-bottom: 26px;
-    padding: 22px 0 20px;
+    margin-bottom: 27px;
+    padding: 23px 0 19px;
 
     @include viewport-tablet {
       margin-bottom: 65px;
@@ -69,16 +73,24 @@
     grid-column: 1 / -1;
 
     @include viewport-tablet {
+      margin-bottom: 65px;
+    }
+
+    @include viewport-desktop {
       margin-bottom: 70px;
     }
   }
 
   &--comment {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     grid-column: 1 / -1;
 
     @include viewport-tablet {
-      margin-bottom: 70px;
+      margin-bottom: 59px;
+    }
+
+    @include viewport-desktop {
+      margin-bottom: 65px;
     }
   }
 
@@ -86,6 +98,10 @@
     margin-bottom: 37px;
 
     @include viewport-tablet {
+      margin-bottom: 87px;
+    }
+
+    @include viewport-desktop {
       margin-bottom: 78px;
     }
   }
@@ -95,6 +111,10 @@
     margin-bottom: 30px;
 
     @include viewport-tablet {
+      margin-bottom: 52px;
+    }
+
+    @include viewport-desktop {
       margin-bottom: 60px;
     }
   }
@@ -102,6 +122,10 @@
   &--options .form__title {
     @include viewport-tablet {
       margin-bottom: 57px;
+    }
+
+    @include viewport-desktop {
+      margin-bottom: 56px;
     }
   }
 }
@@ -141,9 +165,8 @@
   display: grid;
   gap: 13px;
 
-  @include viewport-desktop {
+  @include viewport-tablet {
     grid-template-columns: unset;
-    gap: 14px;
 
     &--row {
       grid-template-columns: repeat(2, 1fr);
@@ -153,6 +176,8 @@
   }
 
   @include viewport-desktop {
+    gap: 14px;
+
     &--row {
       grid-template-columns: repeat(4, 1fr);
       gap: 80px;
@@ -192,6 +217,14 @@
     mask-image: var(--bgi);
     background-color: $darken-text;
     transform: translateY(-50%);
+
+    @include viewport-tablet {
+      right: 14px;
+    }
+
+    @include viewport-desktop {
+      right: 16px;
+    }
   }
 
   &--email::after {

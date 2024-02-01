@@ -1,13 +1,13 @@
 .section-program__header {
   position: relative;
-  padding: 27px 0 25px;
+  padding: 26px 0 25px;
 
   @include viewport-tablet {
-    padding: 40px 0 45px;
+    padding: 40px 0 46px;
   }
 
   @include viewport-desktop {
-    padding: 20px 0 45px;
+    padding: 20px 0 46px;
   }
 
   &::before {
@@ -42,12 +42,8 @@
   margin-bottom: 35px;
 
   @include viewport-tablet {
-    margin-bottom: 55px;
+    margin-bottom: 54px;
   }
-
-  // @include viewport-desktop {
-  //   padding: 74px 0 84px;
-  // }
 }
 
 .section-program__description {
