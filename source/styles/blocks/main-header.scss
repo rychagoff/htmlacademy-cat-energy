@@ -9,15 +9,15 @@
     }
   }
 
-  &--index .main-nav__link {
+  &--index &__line {
     @include viewport-desktop {
-      color: $white-text;
+      padding: 0;
     }
   }
 
-  &--index &__logo {
+  &--index .main-nav__link {
     @include viewport-desktop {
-      padding: 0;
+      color: $white-text;
     }
   }
 
@@ -46,7 +46,7 @@
   }
 
   @include viewport-desktop {
-    padding: 0;
+    padding: 55px 0;
   }
 }
 
