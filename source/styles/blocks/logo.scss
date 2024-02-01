@@ -1,7 +1,6 @@
 .logo {
   display: flex;
   align-items: center;
-  padding: 13px 0;
 
   &:hover,
   &:focus-visible {
@@ -10,14 +9,6 @@
 
   &:active {
     opacity: 0.6;
-  }
-
-  @include viewport-tablet {
-    padding: 25px 0;
-  }
-
-  @include viewport-desktop {
-    padding: 55px 0;
   }
 }
 

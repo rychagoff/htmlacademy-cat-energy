@@ -14,36 +14,39 @@
   </head>
   <body class="page__body">
 
-    <header class="main-header">
+    <header class="main-header main-header--index">
 
       <div class="container">
         <div class="main-header__wrapper">
 
-          <a class="main-header__logo logo" href="index.html">
-            <div class="logo__image">
-              <picture>
-                <source type="image/svg+xml" media="(min-width: 1440px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
-                <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
-                <img src="images/logos/logo-mobile.svg" width="33" height="38" alt="Логотип CAT ENERGY">
-              </picture>
-            </div>
-            <svg class="logo__text" width="101" height="18" aria-hidden="true" focusable="false">
-              <use href="../../images/icons/stack.svg#logo-text"></use>
-            </svg>
-          </a>
-          <nav class="main-header__nav main-nav main-nav--closed main-nav--nojs">
-            <button class="main-nav__toggle" type="button">
+          <div class="main-header__line">
+            <span class="main-header__logo logo">
+              <div class="logo__image">
+                <picture>
+                  <source type="image/svg+xml" media="(min-width: 1440px)" srcset="images/logos/logo-desktop.svg" width="70" height="59">
+                  <source type="image/svg+xml" media="(min-width: 768px)" srcset="images/logos/logo-tablet.svg" width="60" height="50">
+                  <img src="images/logos/logo-mobile.svg" width="33" height="38" alt="Логотип CAT ENERGY">
+                </picture>
+              </div>
+              <svg class="logo__text" width="101" height="18" aria-hidden="true" focusable="false">
+                <use href="../../images/icons/stack.svg#logo-text"></use>
+              </svg>
+            </span>
+            <button class="main-header__toggle main-header__toggle--closed main-header__toggle--nojs" type="button">
               <span class="visually-hidden">Открыть меню</span>
             </button>
+          </div>
+
+          <nav class="main-header__nav main-nav main-nav--closed main-nav--nojs">
             <ul class="main-nav__list">
-              <li class="main-nav__item">
-                <a class="main-nav__link link" href="index.html">Главная</a>
+              <li class="main-nav__item main-nav__item--white main-nav__item--active">
+                <span class="main-nav__link link">Главная</span>
               </li>
-              <li class="main-nav__item">
+              <li class="main-nav__item main-nav__item--white">
                 <a class="main-nav__link link" href="catalog.html">Каталог продукции</a>
               </li>
-              <li class="main-nav__item main-nav__item--active">
-                <span class="main-nav__link link">Подбор программы</span>
+              <li class="main-nav__item main-nav__item--white">
+                <a class="main-nav__link link" href="form.html">Подбор программы</a>
               </li>
             </ul>
           </nav>

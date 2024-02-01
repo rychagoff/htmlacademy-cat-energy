@@ -39,6 +39,15 @@
 
 .main-header__line {
   position: relative;
+  padding: 13px 0 14px;
+
+  @include viewport-tablet {
+    padding: 25px 0;
+  }
+
+  @include viewport-desktop {
+    padding: 0;
+  }
 }
 
 .main-header__toggle {
