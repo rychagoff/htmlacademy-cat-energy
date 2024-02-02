@@ -175,11 +175,14 @@
   }
 }
 
-.product-card__link {
-  display: flex;
-  align-items: center;
+.product-card__link-wrapper {
   grid-column: 1 / -1;
   grid-row: 3 / -1;
+}
+
+.product-card__link {
+  display: inline-flex;
+  align-items: center;
   height: 24px;
   font-size: 16px;
   text-decoration: none;

@@ -10,6 +10,11 @@
   color: $white-text;
   border: 0;
 
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+
   &--primary {
     background-color: $primary-color;
 
@@ -17,11 +22,6 @@
     &:focus-visible,
     &:active {
       background-color: $primary-color-hover;
-    }
-
-    &:focus-visible {
-      outline: 2px solid $grey-text;
-      outline-offset: -2px;
     }
 
     &:active {

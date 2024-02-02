@@ -118,13 +118,6 @@
   }
 }
 
-// .example__summary span {
-//   @include viewport-tablet {
-//     display: block;
-//     margin-top: 8px;
-//   }
-// }
-
 .example__slider {
   position: relative;
   max-width: 280px;
@@ -178,6 +171,11 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
 }
 
 .example__button svg {

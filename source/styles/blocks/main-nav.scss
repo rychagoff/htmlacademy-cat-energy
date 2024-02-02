@@ -83,6 +83,13 @@
     bottom: 0;
   }
 
+  &--white .link {
+    &:focus-visible {
+      outline: 2px solid $grey-text;
+      outline-offset: 2px;
+    }
+  }
+
   &--white .main-nav__link::after {
     @include viewport-desktop {
       background-color: $white-text;
@@ -93,22 +100,13 @@
     width: 100%;
   }
 
-  &:hover,
-  &:focus-visible {
-    opacity: 0.6;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
-
   @include viewport-tablet {
     padding: 0;
   }
 }
 
 .main-nav__link {
-  display: block;
+  display: inline-flex;
   font-size: 20px;
   line-height: 20px;
   text-decoration: none;
