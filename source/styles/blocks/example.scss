@@ -155,22 +155,46 @@
   height: 100%;
   z-index: 2;
 
+  // &::before {
+  //   content: "";
+  //   width: 4px;
+  //   height: 100%;
+  //   background-color: $grey-text-2;
+  //   border-radius: 2px;
+  // }
+}
+
+.example__button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: $grey-text-2;
+  background-color: transparent;
+  cursor: pointer;
+
   &::before {
     content: "";
+    position: absolute;
+    top: 0;
     width: 4px;
     height: 100%;
     background-color: $grey-text-2;
     border-radius: 2px;
+    transform: translateX(-50%);
+    z-index: -1;
   }
-}
 
-.example__button {
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
+  &:hover svg {
+    color: $primary-color;
+  }
+
+  &:hover::before {
+    background-color: $primary-color;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 
   &:focus-visible {
     outline: 2px solid $primary-color;
