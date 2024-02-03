@@ -39,6 +39,10 @@
   @include viewport-tablet {
     padding-top: 5px;
   }
+
+  @include viewport-desktop {
+    max-width: 610px;
+  }
 }
 
 .main-nav__list {
@@ -51,12 +55,14 @@
 
   @include viewport-tablet {
     flex-direction: row;
-    gap: 36px;
+    justify-content: flex-end;
+    column-gap: 36px;
+    row-gap: 18px;
   }
 
   @include viewport-desktop {
-    gap: 34px;
-    max-width: 500px;
+    column-gap: 34px;
+    row-gap: 17px;
   }
 }
 
