@@ -32,6 +32,10 @@
     }
   }
 
+  &--nojs {
+    display: flex;
+  }
+
   @include viewport-desktop {
     padding-top: 0;
   }
@@ -58,7 +62,7 @@
 
 .main-nav__item {
   position: relative;
-  padding: 23px 0;
+  padding: 22px 0;
   text-align: center;
 
   &::before,

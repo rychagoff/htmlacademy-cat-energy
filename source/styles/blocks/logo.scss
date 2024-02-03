@@ -18,17 +18,23 @@
   }
 
   @include viewport-tablet {
+    grid-template-columns: 60px 1fr;
+    gap: 13px;
+  }
+
+  @include viewport-desktop {
     grid-template-columns: 70px 1fr;
+    gap: 14px;
   }
 }
 
-.logo__image {
-  margin-right: 56px;
+// .logo__image {
+//   margin-right: 56px;
 
-  @include viewport-tablet {
-    margin-right: 13px;
-  }
-}
+//   @include viewport-tablet {
+//     margin-right: 13px;
+//   }
+// }
 
 .logo__image img {
   display: block;
