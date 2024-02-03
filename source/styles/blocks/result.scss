@@ -1,5 +1,6 @@
 .result {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 32px;
   width: 100%;
@@ -18,7 +19,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex: 1 1 124px;
+  // width: 100%;
   padding: 14px 20px 16px;
   text-align: center;
   border: 1px solid $grey-border;
