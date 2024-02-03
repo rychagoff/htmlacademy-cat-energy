@@ -16,6 +16,7 @@
 .parameters__item {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 
   @include viewport-tablet {
     margin-bottom: 7px;
@@ -33,6 +34,7 @@
 
 .parameters__description {
   margin-left: 0;
+  text-align: right;
 
   @include viewport-tablet {
     margin-left: 50px;
