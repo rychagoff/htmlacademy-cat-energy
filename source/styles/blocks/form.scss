@@ -41,7 +41,7 @@
 
     @include viewport-desktop {
       padding: 23px 26px;
-      margin-bottom: auto;
+      margin-bottom: 70px;
     }
   }
 
@@ -198,13 +198,13 @@
 }
 
 .form__span {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   max-width: fit-content;
 }
 
 .form__input-wrapper {
   position: relative;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 
   &--email::after,
   &--phone::after {

@@ -4,7 +4,6 @@
   &:focus-within .label-control__mark {
     outline: 2px solid $grey-text;
     outline-offset: -2px;
-    // border-color: $grey-control-hover;
   }
 
   @include viewport-tablet {
@@ -40,6 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 30px;
   height: 30px;
   border: 1px solid $grey-border;
