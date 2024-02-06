@@ -23,45 +23,47 @@ navToggle.addEventListener('click', () => {
 
 map.style.zIndex = '0';
 
-const range = document.querySelector('.example__range');             // Ищем бегунок
-const rangeParent = range.offsetParent;                              // Ищем слайдер
-const catBefore = document.querySelector('.example__image--before'); // Ищем блок "До"
-const catAfter = document.querySelector('.example__image--after');   // Ищем блок "После"
+const range = document.querySelector('.example__range');               // Ищем бегунок
+const rangeParent = range.offsetParent;                                // Ищем слайдер
+const catBefore = document.querySelector('.example__image--before');   // Ищем блок "До"
+const catAfter = document.querySelector('.example__image--after');     // Ищем блок "После"
 
-const rangeParentWidth = rangeParent.offsetWidth;                    // Читаем ширину слайдера
+const rangeParentWidth = rangeParent.offsetWidth;                      // Читаем ширину слайдера
+let dragging = false;                                                  // По-умолчания бегунок не может двигаться
 
-range.addEventListener('mousedown', (evt) => {
-  dragging = true;                                                   // Бегунок может двигаться
-  evt.preventDefault();                                              // Выключаем запуск выделения (действие браузера)
+range.addEventListener('mousedown', (down) => {
+  dragging = true;                                                     // Бегунок может двигаться
+  down.preventDefault();                                                // Выключаем запуск выделения (действие браузера)
 
-  let rangeStyle = window.getComputedStyle(range);                   // Ищем CSS-стили бегунка
-  let leftX = parseInt(rangeStyle.getPropertyValue('--x'));          // Читаем переменную "--x" положения бегунка
-  let catBeforeStyle = window.getComputedStyle(catBefore);           // Ищем CSS-стили блока "До"
-  let clipBefore = catBeforeStyle.getPropertyValue('--clip-before'); // Читаем переменную "--clip-before"
-  let catAfterStyle = window.getComputedStyle(catAfter);             // Ищем CSS-стили блока "После"
-  let clipAfter = catAfterStyle.getPropertyValue('--clip-after');    // Читаем переменную "--clip-after"
+  const rangeStyle = window.getComputedStyle(range);                   // Ищем CSS-стили бегунка
+  let leftX = parseInt(rangeStyle.getPropertyValue('--x'), 10);        // Читаем переменную "--x" положения бегунка
+  const catBeforeStyle = window.getComputedStyle(catBefore);           // Ищем CSS-стили блока "До"
+  let clipBefore = catBeforeStyle.getPropertyValue('--clip-before');   // Читаем переменную "--clip-before"
+  const catAfterStyle = window.getComputedStyle(catAfter);             // Ищем CSS-стили блока "После"
+  let clipAfter = catAfterStyle.getPropertyValue('--clip-after');      // Читаем переменную "--clip-after"
 
-  let rangeParentLeft = rangeParent.getBoundingClientRect().left;    // Читаем расстояние от края окна до слайдера
-  let rangeLeft = range.getBoundingClientRect().left;                // Читаем расстояние от края окна до бегунка
+  const rangeParentLeft = rangeParent.getBoundingClientRect().left;    // Читаем расстояние от края окна до слайдера
+  const rangeLeft = range.getBoundingClientRect().left;                // Читаем расстояние от края окна до бегунка
 
-  console.log('Текущее положение (left) бегунка = ' + leftX+'%');
-  console.log('Текущее положение курсора = ' + evt.clientX+'px');
-  console.log('Расстояние от левого края окна до слайдера = ' + rangeParentLeft+'px');
-  console.log('Расстояние от левого края окна до бегунка = ' + rangeLeft+'px');
-  console.log('Расстояние от курсора до левого края бегунка = ' + (evt.clientX - rangeLeft)+'px');
+  console.log(`Текущее положение (left) бегунка = ${leftX}%`);
+  console.log(`Текущее положение курсора = ${down.clientX}px`);
+  console.log(`Расстояние от левого края окна до слайдера = ${rangeParentLeft}px`);
+  console.log(`Расстояние от левого края окна до бегунка = ${rangeLeft}px`);
+  console.log(`Расстояние от курсора до левого края бегунка = ${(down.clientX - rangeLeft)}px`);
   console.log('----------');
 
-  document.addEventListener('mousemove', onMouseMove);               // Функция движения мыши
-  document.addEventListener('mouseup', onMouseUp);                   // Функция отпускания кнопки мыши
+  document.addEventListener('mousemove', onMouseMove);                 // Функция движения мыши
+  document.addEventListener('mouseup', onMouseUp);                     // Функция отпускания кнопки мыши
 
-  function onMouseMove(evt) {
-    if (!dragging) return;                                           // Если бегунок двигается, то функция выполняется
+  function onMouseMove(move) {
+    // Если бегунок не двигается, то функция не выполняется
+    if (!dragging) {
+      return;
+    }
+    console.log(`Новое положение курсора = + ${move.clientX}px`);
+    console.log(`Расстояние от края слайдера до нового положения курсора = ${(move.clientX - rangeParentLeft)}px`);
 
-    console.log('Новое положение курсора = ' + evt.clientX+'px');
-    console.log('Расстояние от края слайдера до нового положения курсора = ' + (evt.clientX - rangeParentLeft) +'px');
-
-    leftX = (evt.clientX - rangeParentLeft) / rangeParentWidth;      // Считаем соотношение нового положения курсора
-                                                                     // с шириной слайдера
+    leftX = (move.clientX - rangeParentLeft) / rangeParentWidth;        // Считаем соотношение нового положения курсора с шириной слайдера
 
     // Курсор вышел слева из слайдера => оставить бегунок в его границах.
     if (leftX < 0) {
@@ -78,7 +80,7 @@ range.addEventListener('mousedown', (evt) => {
     clipAfter = `0 0 0 ${leftX}%`;                            // Определяем новое значение переменной "--clip-after"
     clipBefore = `0 ${100 - leftX}% 0 0`;                     // Определяем новое значение переменной "--clip-before"
 
-    range.style.setProperty("--x", `${leftX}%`);              // Пишем новое положение бегунка в переменную "--x"
+    range.style.setProperty('--x', `${leftX}%`);              // Пишем новое положение бегунка в переменную "--x"
     catAfter.style.setProperty('--clip-after', clipAfter);    // Пишем новую обрезку кота в блоке "После"
     catBefore.style.setProperty('--clip-before', clipBefore); // Пишем новую обрезку кота в блоке "До"
   }
