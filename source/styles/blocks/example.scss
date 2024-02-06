@@ -129,14 +129,16 @@
 
 .example__image {
   &--before {
-    clip-path: inset(0 50% 0 0);
+    --clip-before: 0 50% 0 0;
+    clip-path: inset(var(--clip-before));
   }
 
   &--after {
+    --clip-after: 0 0 0 50%;
     position: absolute;
     top: 0;
     right: 0;
-    clip-path: inset(0 0 0 50%);
+    clip-path: inset(var(--clip-after));
   }
 }
 
@@ -145,9 +147,11 @@
 }
 
 .example__range {
+  --x: 50%;
+
   position: absolute;
   top: 0;
-  left: 50%;
+  left: var(--x);
   transform: translateX(-50%);
   display: flex;
   justify-content: center;
