@@ -31,7 +31,7 @@ const catAfter = document.querySelector('.example__image--after');     // Ище
 const rangeParentWidth = rangeParent.offsetWidth;                      // Читаем ширину слайдера
 let dragging = false;                                                  // По-умолчания бегунок не может двигаться
 
-range.addEventListener('mousedown', (down) => {
+range.addEventListener('pointerdown', (down) => {
   dragging = true;                                                     // Бегунок может двигаться
   down.preventDefault();                                                // Выключаем запуск выделения (действие браузера)
 
@@ -52,10 +52,10 @@ range.addEventListener('mousedown', (down) => {
   console.log(`Расстояние от курсора до левого края бегунка = ${(down.clientX - rangeLeft)}px`);
   console.log('----------');
 
-  document.addEventListener('mousemove', onMouseMove);                 // Функция движения мыши
-  document.addEventListener('mouseup', onMouseUp);                     // Функция отпускания кнопки мыши
+  document.addEventListener('pointermove', onPointerMove);                 // Функция движения мыши
+  document.addEventListener('pointerup', onPointerUp);                     // Функция отпускания кнопки мыши
 
-  function onMouseMove(move) {
+  function onPointerMove(move) {
     // Если бегунок не двигается, то функция не выполняется
     if (!dragging) {
       return;
@@ -85,9 +85,9 @@ range.addEventListener('mousedown', (down) => {
     catBefore.style.setProperty('--clip-before', clipBefore); // Пишем новую обрезку кота в блоке "До"
   }
 
-  function onMouseUp() {
-    document.removeEventListener('mouseup', onMouseUp);       // Завершаем событие нажатия кнопки мыши
-    document.removeEventListener('mousemove', onMouseMove);   // Завершаем событие движения мыши
+  function onPointerUp() {
+    document.removeEventListener('pointerup', onPointerUp);       // Завершаем событие нажатия кнопки мыши
+    document.removeEventListener('pointermove', onPointerMove);   // Завершаем событие движения мыши
     dragging = false;                                         // Бегунок теперь не двигается
   }
 });
