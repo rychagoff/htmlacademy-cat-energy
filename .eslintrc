@@ -12,5 +12,11 @@
     "noUiSlider": "readonly",
     "Pristine": "readonly"
   },
-  "extends": "htmlacademy/vanilla"
+  "extends": "htmlacademy/vanilla",
+  "rules": {
+    "no-multi-spaces": [ "error", {
+      "ignoreEOLComments": true
+    }],
+    "no-console": "off"
+  }
 }
